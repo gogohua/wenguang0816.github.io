@@ -31,7 +31,7 @@ A.length &amp;gt;= 3
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -371,7 +371,7 @@ A.length &amp;gt;= 3
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        224
+                        223
                     </div>
                     
 
@@ -409,23 +409,24 @@ A.length &amp;gt;= 3
 <ol>
 <li><code>3 &lt;= A.length &lt;= 10000</code></li>
 <li><code>0 &lt;= A[i] &lt;= 10^6</code></li>
-<li>A is a mountain, as defined above.<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5>指定临时变量<code>peak</code>和<code>peak_index</code>，<code>peak</code>与<code>A[i]</code>进行比较，若peak小于A[i]，则令<code>peak = A[i]; peak_index = i;</code>，遍历数组，直到<code>peak</code>取到最大值，<code>peak_index</code>为<code>peak</code>取最大时的i值<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>class Solution {
-public:
-int peakIndexInMountainArray(vector&lt;int&gt;&amp; A) {
-    int peak = 0, peak_index = 0;
-    auto len = A.size() - 1;
-    for(int i = 0; i &lt; len; ++i)
-    {
-        if(peak &lt; A[i])
-        {
-            peak = A[i];
-            peak_index = i;
-        }
-    }
-    return peak_index;
-}
-};
-</code></pre></li>
+<li>A is a mountain, as defined above.<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5>指定临时变量<code>peak</code>和<code>peak_index</code>，<code>peak</code>与<code>A[i]</code>进行比较，若peak小于A[i]，则令<code>peak = A[i]; peak_index = i;</code>，遍历数组，直到<code>peak</code>取到最大值，<code>peak_index</code>为<code>peak</code>取最大时的i值<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+<span class="token keyword">int</span> <span class="token function">peakIndexInMountainArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> peak <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> peak_index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> len <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>peak <span class="token operator">&lt;</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            peak <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            peak_index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> peak_index<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ol>
 
             </div>
@@ -749,7 +750,7 @@ int peakIndexInMountainArray(vector&lt;int&gt;&amp; A) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,14 +368,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        395
+                        335
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -402,25 +402,26 @@
 <ul>
 <li>The length of <code>words</code> will be at most <code>100</code>.</li>
 <li>Each <code>words[i]</code> will have length in range <code>[1, 12]</code>.</li>
-<li><code>words[i]</code> will only consist of lowercase letters.<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5>将words中word的字母逐个转换为morsecode，并存入临时string，之后将其插入到无序容器<code>unordered_set&lt;string&gt; result;</code>中，然后获取不同元素的数量。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>class Solution {
-public:
-int uniqueMorseRepresentations(vector&lt;string&gt;&amp; words) {
-    unordered_set&lt;string&gt; result;
-    //vector&lt;string&gt;morseWords;
-    vector&lt;string&gt; morseCode{&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;};
-    for(auto word = words.begin(); word != words.end(); ++word)
-    {
-        string tmp = &quot;&quot;;
-        for(auto letter : *word)
-        {
-            tmp += morseCode[letter - &#39;a&#39;];
-        }
-        result.insert(tmp);
-    }
-    return result.size();
-}
-};
-</code></pre></li>
+<li><code>words[i]</code> will only consist of lowercase letters.<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5>将words中word的字母逐个转换为morsecode，并存入临时string，之后将其插入到无序容器<code>unordered_set&lt;string&gt; result;</code>中，然后获取不同元素的数量。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+<span class="token keyword">int</span> <span class="token function">uniqueMorseRepresentations</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token operator">&amp;</span> words<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    unordered_set<span class="token operator">&lt;</span>string<span class="token operator">></span> result<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//vector&lt;string>morseWords;</span>
+    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> morseCode<span class="token punctuation">{</span><span class="token string">".-"</span><span class="token punctuation">,</span><span class="token string">"-..."</span><span class="token punctuation">,</span><span class="token string">"-.-."</span><span class="token punctuation">,</span><span class="token string">"-.."</span><span class="token punctuation">,</span><span class="token string">"."</span><span class="token punctuation">,</span><span class="token string">"..-."</span><span class="token punctuation">,</span><span class="token string">"--."</span><span class="token punctuation">,</span><span class="token string">"...."</span><span class="token punctuation">,</span><span class="token string">".."</span><span class="token punctuation">,</span><span class="token string">".---"</span><span class="token punctuation">,</span><span class="token string">"-.-"</span><span class="token punctuation">,</span><span class="token string">".-.."</span><span class="token punctuation">,</span><span class="token string">"--"</span><span class="token punctuation">,</span><span class="token string">"-."</span><span class="token punctuation">,</span><span class="token string">"---"</span><span class="token punctuation">,</span><span class="token string">".--."</span><span class="token punctuation">,</span><span class="token string">"--.-"</span><span class="token punctuation">,</span><span class="token string">".-."</span><span class="token punctuation">,</span><span class="token string">"..."</span><span class="token punctuation">,</span><span class="token string">"-"</span><span class="token punctuation">,</span><span class="token string">"..-"</span><span class="token punctuation">,</span><span class="token string">"...-"</span><span class="token punctuation">,</span><span class="token string">".--"</span><span class="token punctuation">,</span><span class="token string">"-..-"</span><span class="token punctuation">,</span><span class="token string">"-.--"</span><span class="token punctuation">,</span><span class="token string">"--.."</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> word <span class="token operator">=</span> words<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> word <span class="token operator">!=</span> words<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>word<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        string tmp <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> letter <span class="token operator">:</span> <span class="token operator">*</span>word<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            tmp <span class="token operator">+</span><span class="token operator">=</span> morseCode<span class="token punctuation">[</span>letter <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        result<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ul>
 
             </div>
@@ -744,7 +745,7 @@ int uniqueMorseRepresentations(vector&lt;string&gt;&amp; words) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

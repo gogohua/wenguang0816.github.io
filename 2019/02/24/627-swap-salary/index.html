@@ -30,7 +30,7 @@ Truncate tab">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -370,7 +370,7 @@ Truncate tab">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        254
+                        246
                     </div>
                     
 
@@ -415,11 +415,12 @@ insert into salary (id, name, sex, salary) values (&#39;4&#39;, &#39;D&#39;, &#3
 | 3  | C    | f   | 5500   |
 | 4  | D    | m   | 500    |
 </code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用SQL中的case-when多条件判断语句，类似C++中的switch-case语句</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>UPDATE salary
-SET sex = (CASE sex WHEN &#39;m&#39; THEN &#39;f&#39;
-                    WHEN &#39;f&#39; THEN &#39;m&#39;
-           END)
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> salary
+<span class="token keyword">SET</span> sex <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">CASE</span> sex <span class="token keyword">WHEN</span> <span class="token string">'m'</span> <span class="token keyword">THEN</span> <span class="token string">'f'</span>
+                    <span class="token keyword">WHEN</span> <span class="token string">'f'</span> <span class="token keyword">THEN</span> <span class="token string">'m'</span>
+           <span class="token keyword">END</span><span class="token punctuation">)</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -742,7 +743,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

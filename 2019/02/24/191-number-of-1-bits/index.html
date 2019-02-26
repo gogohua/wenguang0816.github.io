@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +368,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        343
+                        339
                     </div>
                     
 
@@ -413,46 +413,47 @@
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
 <li>思路1：除2取余法，末尾为1，除2取余后为1，末尾为0，除2取余后为0</li>
 <li>思路2：与1相与，直接判定末位是否为1</li>
-<li>思路3：直接去掉二进制中位置最靠后的1。假设<code>n=1100</code>，则<code>n-1=1011</code>，那么<code>n&amp;(n-1)=1000</code>,位置最靠后的1被去掉。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>//方法1
-class Solution {
-public:
-  int hammingWeight(uint32_t n) {
-      int cnt = 0;
-      while(n != 0)
-      {
-          cnt += n % 2;
-          n &gt;&gt;= 1;
-      }
-      return cnt;
-  }
-};
-//方法2
-class Solution {
-public:
-  int hammingWeight(uint32_t n) {
-      int cnt = 0;
-      while(n != 0)
-      {
-          cnt += n &amp; 1;
-          n &gt;&gt;= 1;
-      }
-      return cnt;
-  }
-};
-//方法3
-class Solution {
-public:
-  int hammingWeight(uint32_t n) {
-      int cnt = 0;
-      while(n != 0)
-      {
-          n = n &amp; (n-1);
-          cnt++;
-      }
-      return cnt;
-  }
-};
-</code></pre></li>
+<li>思路3：直接去掉二进制中位置最靠后的1。假设<code>n=1100</code>，则<code>n-1=1011</code>，那么<code>n&amp;(n-1)=1000</code>,位置最靠后的1被去掉。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//方法1</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">hammingWeight</span><span class="token punctuation">(</span>uint32_t n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          cnt <span class="token operator">+</span><span class="token operator">=</span> n <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">;</span>
+          n <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法2</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">hammingWeight</span><span class="token punctuation">(</span>uint32_t n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          cnt <span class="token operator">+</span><span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+          n <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法3</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">hammingWeight</span><span class="token punctuation">(</span>uint32_t n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          n <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ul>
 
             </div>
@@ -779,7 +780,7 @@ insert i</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

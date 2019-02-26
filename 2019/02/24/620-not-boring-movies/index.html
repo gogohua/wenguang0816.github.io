@@ -29,7 +29,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -369,7 +369,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        294
+                        292
                     </div>
                     
 
@@ -418,11 +418,12 @@ insert into cinema (id, movie, description, rating) values (&#39;5&#39;, &#39;Ho
 |   1     | War       |   great 3D   |   8.9     |
 +---------+-----------+--------------+-----------+
 </code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过<code>description</code>和<code>id</code>进行筛选，然后通过<code>rating</code>进行倒序排序（<code>DESC</code>）</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>SELECT id, movie, description, rating
-FROM cinema
-WHERE id % 2 != 0 and description != &#39;boring&#39;
-ORDER BY rating DESC
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating
+<span class="token keyword">FROM</span> cinema
+<span class="token keyword">WHERE</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> description <span class="token operator">!=</span> <span class="token string">'boring'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> rating <span class="token keyword">DESC</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -747,7 +748,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

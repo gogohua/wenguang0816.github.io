@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +368,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        220
+                        216
                     </div>
                     
 
@@ -399,31 +399,32 @@
 <p><strong>Input:</strong> <code>[0,1]</code></p>
 <p><strong>Output:</strong> <code>0</code></p>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过观察可以知道5的二进制为<strong>1</strong>01，6的二进制为<strong>1</strong>10，7的二进制为<strong>1</strong>11，输出4的二进制为<strong>1</strong>00，可以发现，只要找到二进制的左边公共部分即可。<br>可以先建立一个32位都是1的mask，然后每次左移一位，比较m和n是否相同，不同再继续左移一位，直至相同，然后把m和mask相与即得最终结果。</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>//方法1
-class Solution {
-public:
-    int rangeBitwiseAnd(int m, int n) {
-        unsigned int mask = UINT_MAX;
-        while ((m &amp; mask) != (n &amp; mask)) {
-            mask &lt;&lt;= 1;
-        }
-        return mask &amp; m;
-    }
-};
-//方法2
-class Solution {
-public:
-    int rangeBitwiseAnd(int m, int n) {
-        int cnt = 0;
-        while(m!= n){
-            m&gt;&gt;=1;
-            n&gt;&gt;=1;
-            ++cnt;
-        }
-        return m&lt;&lt;cnt;
-    }
-};
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//方法1</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">rangeBitwiseAnd</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> mask <span class="token operator">=</span> UINT_MAX<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>m <span class="token operator">&amp;</span> mask<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> mask<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            mask <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> mask <span class="token operator">&amp;</span> m<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法2</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">rangeBitwiseAnd</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>m<span class="token operator">!=</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            m<span class="token operator">>>=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            n<span class="token operator">>>=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token operator">++</span>cnt<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> m<span class="token operator">&lt;&lt;</span>cnt<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -752,7 +753,7 @@ Explanation: 24 </div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

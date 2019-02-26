@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +368,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        357
+                        349
                     </div>
                     
 
@@ -403,75 +403,76 @@
 <li><code>0 &lt;= A[i] &lt;= 1000</code><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5></li>
 <li>先将数组A按照奇偶分为两个数组odd和even，然后按照偶数、奇数的顺序依次插入到结果数组；</li>
 <li><p>思路和1类似，利用vector的<code>top()</code>取出栈顶元素和<code>pop()</code>删除栈顶元素；</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>// code 1:
-// 80ms
-class Solution {
-public:
- vector&lt;int&gt; sortArrayByParityII(vector&lt;int&gt;&amp; A) {
-     vector&lt;int&gt; odd, even, result;
-     for(auto vint = A.begin(); vint != A.end(); ++vint)
-     {
-         if((*vint) % 2 == 0)
-             even.push_back(*vint);
-         else
-             odd.push_back(*vint);
-     }
-     size_t len = A.size();
-     auto e = even.begin();
-     auto o = odd.begin();
-     for(auto i = 0; i &lt; len; ++i)
-     {
-         if(i % 2 == 0)
-         {
-             result.push_back(*e);
-             e++;
-         }                
-         else
-         {
-             result.push_back(*o);
-             o++;
-         }
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// code 1:</span>
+<span class="token comment" spellcheck="true">// 80ms</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+ vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">sortArrayByParityII</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> odd<span class="token punctuation">,</span> even<span class="token punctuation">,</span> result<span class="token punctuation">;</span>
+     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> vint <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> vint <span class="token operator">!=</span> A<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>vint<span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>vint<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+             even<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token operator">*</span>vint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">else</span>
+             odd<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token operator">*</span>vint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     size_t len <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">auto</span> e <span class="token operator">=</span> even<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">auto</span> o <span class="token operator">=</span> odd<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+         <span class="token punctuation">{</span>
+             result<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token operator">*</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             e<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>                
+         <span class="token keyword">else</span>
+         <span class="token punctuation">{</span>
+             result<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token operator">*</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             o<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
 
-     }
-     return result;
- }
-};
-// code 2：
-// 64ms
-class Solution {
-public:
- vector&lt;int&gt; sortArrayByParityII(vector&lt;int&gt;&amp; A) 
- {
-     stack&lt;int&gt; odd;
-     stack&lt;int&gt; even;
-     vector&lt;int&gt;::iterator iter;
-     int a=0;//奇偶标志位
-     for(iter=A.begin();iter!=A.end();iter++)
-     {
-         if(*iter%2==0)
-             even.push(*iter);
-         else
-             odd.push(*iter);
-     }
-     for(iter=A.begin();iter!=A.end();iter++)
-     {
-           //top()取出栈顶元素，pop()删除栈顶元素；
-           if(a==0)
-           {
-             *iter=even.top();
-              even.pop();
-           }
-         else
-         {
-             *iter=odd.top();
-              odd.pop();
-         }
-         a=1-a;//奇偶变换
-     }
-     return A;
- }
-};
-</code></pre></li>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// code 2：</span>
+<span class="token comment" spellcheck="true">// 64ms</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+ vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">sortArrayByParityII</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> A<span class="token punctuation">)</span> 
+ <span class="token punctuation">{</span>
+     stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> odd<span class="token punctuation">;</span>
+     stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> even<span class="token punctuation">;</span>
+     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator iter<span class="token punctuation">;</span>
+     <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//奇偶标志位</span>
+     <span class="token keyword">for</span><span class="token punctuation">(</span>iter<span class="token operator">=</span>A<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iter<span class="token operator">!=</span>A<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iter<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+             even<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">else</span>
+             odd<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">for</span><span class="token punctuation">(</span>iter<span class="token operator">=</span>A<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iter<span class="token operator">!=</span>A<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iter<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true">//top()取出栈顶元素，pop()删除栈顶元素；</span>
+           <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+           <span class="token punctuation">{</span>
+             <span class="token operator">*</span>iter<span class="token operator">=</span>even<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              even<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+         <span class="token keyword">else</span>
+         <span class="token punctuation">{</span>
+             <span class="token operator">*</span>iter<span class="token operator">=</span>odd<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              odd<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         a<span class="token operator">=</span><span class="token number">1</span><span class="token operator">-</span>a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//奇偶变换</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">return</span> A<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ol>
 
             </div>
@@ -795,7 +796,7 @@ public:
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

@@ -29,7 +29,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -369,7 +369,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        267
+                        265
                     </div>
                     
 
@@ -419,8 +419,9 @@ insert into World (name, continent, area, population, gdp) values (&#39;Angola&#
 | Algeria      | 37100000    | 2381741      |
 +--------------+-------------+--------------+
 </code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用人口和面积进行筛选</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>select name, population, area from World where area &gt; 3000000 or population &gt; 25000000;
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> name<span class="token punctuation">,</span> population<span class="token punctuation">,</span> area <span class="token keyword">from</span> World <span class="token keyword">where</span> area <span class="token operator">></span> <span class="token number">3000000</span> <span class="token operator">or</span> population <span class="token operator">></span> <span class="token number">25000000</span><span class="token punctuation">;</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -743,7 +744,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

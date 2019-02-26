@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -376,7 +376,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        277
+                        275
                     </div>
                     
 
@@ -410,34 +410,35 @@
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>要求时间复杂度为O(n)；</p>
 <ul>
 <li>思路1： 采用和<a href="https://leetcode-cn.com/problems/single-number/" target="_blank" rel="noopener">136. Single Number</a>类似的思路，将容器中所有的数字和有序数列<code>1,2,3……,n</code>异或，如果容器中存在数字<code>x</code>，那么和有序数列中对应的<code>x</code>异或结果为零，最终得到的结果便为缺失的数字。</li>
-<li>思路2：采用求和相减，若容器长度为<code>n</code>，利用求和公式计算<code>s1 = n * (n+1) / 2</code>，减去容器中数字的求和<code>s2</code>，则可得缺失的数字。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>//方法1：
-class Solution {
-public:
-  int missingNumber(vector&lt;int&gt;&amp; nums) {
-      int result = 0;
-      int len = nums.size();
-      for(int i = 0; i &lt; len; ++i)
-      {
-          result ^= (i+1) ^ nums[i];
-      }
-      return result;
-  }
-};
-//方法2：
-class Solution {
-public:
-  int missingNumber(vector&lt;int&gt;&amp; nums) {
-      int n = nums.size();
-      int s1 = n * (n + 1) / 2;
-      int s2 = 0;
-      for(int i : nums)
-      {
-          s2 += i;
-      }
-      return s1 - s2;
-  }
-};
-</code></pre></li>
+<li>思路2：采用求和相减，若容器长度为<code>n</code>，利用求和公式计算<code>s1 = n * (n+1) / 2</code>，减去容器中数字的求和<code>s2</code>，则可得缺失的数字。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//方法1：</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          result <span class="token operator">^</span><span class="token operator">=</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">^</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法2：</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> n <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> s1 <span class="token operator">=</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> s2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          s2 <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> s1 <span class="token operator">-</span> s2<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ul>
 
             </div>
@@ -770,7 +771,7 @@ Explanation: 24 </div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

@@ -31,7 +31,7 @@ insert i">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -371,7 +371,7 @@ insert i">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        197
+                        196
                     </div>
                     
 
@@ -417,9 +417,10 @@ insert into Person (Id, Email) values (&#39;3&#39;, &#39;a@b.com&#39;)
 +---------+
 </code></pre><p><strong>Note</strong>: All emails are in lowercase.</p>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>使用 GROUP BY 和 HAVING 条件：向 GROUP BY 添加条件的一种更常用的方法是使用 HAVING 子句，该子句更为简单高效。<br>GROUP BY 语句用于结合合计函数，根据一个或多个列对结果集进行分组。</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>select Email from Person
-group by Email having count(Email) &gt; 1;
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> Email <span class="token keyword">from</span> Person
+<span class="token keyword">group</span> <span class="token keyword">by</span> Email <span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span>Email<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -741,7 +742,7 @@ group by Email having count(Email) &gt; 1;
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

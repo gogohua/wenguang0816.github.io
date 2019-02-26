@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +368,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        424
+                        416
                     </div>
                     
 
@@ -406,75 +406,76 @@ Output: 0
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
 <li>思路1： 遍历J和S，两者相等，计数+1；</li>
 <li>思路2： 创建临时数组a[256]，先以J中元素的ASCII值作为a的索引并作标记。后以S中元素的ASCII值作为a的索引，判断该位置是否为零，如果不为零，则计数+1；</li>
-<li>思路3： 和2类似，不过将大小写字母分开，减少了数组的长度。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>//code 1：
-//运行时间大于4ms；
-class Solution {
-public:
-  int numJewelsInStones(string J, string S) {
-      int num = 0;
-      for (int i = 0; i &lt; J.length(); i++)
-      {
-          for (int j = 0; j&lt; S.length(); j++)
-              if (J[i] == S[j])
-                  num += 1;
-      }
-      return num;
-  }
-};
-//code 2:
-//运行时间4ms；
-class Solution {
-public:
-  int numJewelsInStones(string J, string S) {
-      char a[256]={0}; 
-      for(int i=0;i&lt;J.length();++i)
-          a[J[i]]++; //相应字母的ASCII值作为索引；
-      int ans=0; 
-      for(int i=0;i&lt;S.length();++i)
-          if(a[S[i]]) 
-              ans++;
-      return ans;     
-  }
-};
-// code  3:
-//运行时间0ms；
-class Solution {
-public:
-  int numJewelsInStones(string J, string S) {
-      int a_upper[26] = {0} , a_lower[26] = {0};      
-      for(auto ch : J)
-      {
-          int x;            
-          if(isupper(ch))
-          {
-              x = ch - &#39;A&#39;;
-              a_upper[x] = 1;
-          }
-          else
-          {
-              x = ch - &#39;a&#39;;
-              a_lower[x] = 1;
-          }
-      } 
-      int num = 0;
-      for(auto ch : S)
-      {
-          int x;
-          if(isupper(ch))
-          {
-              x = ch - &#39;A&#39;;
-              if(a_upper[x])  ++num;
-          }
-          else
-          {
-              x = ch - &#39;a&#39;;
-              if(a_lower[x])  ++num;
-          } 
-      } 
-      return num;
-  }
-};
-</code></pre></li>
+<li>思路3： 和2类似，不过将大小写字母分开，减少了数组的长度。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//code 1：</span>
+<span class="token comment" spellcheck="true">//运行时间大于4ms；</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">numJewelsInStones</span><span class="token punctuation">(</span>string J<span class="token punctuation">,</span> string S<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> J<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span> S<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>J<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> S<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                  num <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//code 2:</span>
+<span class="token comment" spellcheck="true">//运行时间4ms；</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">numJewelsInStones</span><span class="token punctuation">(</span>string J<span class="token punctuation">,</span> string S<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">char</span> a<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>J<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>
+          a<span class="token punctuation">[</span>J<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//相应字母的ASCII值作为索引；</span>
+      <span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>S<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>S<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+              ans<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> ans<span class="token punctuation">;</span>     
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// code  3:</span>
+<span class="token comment" spellcheck="true">//运行时间0ms；</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">numJewelsInStones</span><span class="token punctuation">(</span>string J<span class="token punctuation">,</span> string S<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> a_upper<span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> a_lower<span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>      
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> ch <span class="token operator">:</span> J<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">int</span> x<span class="token punctuation">;</span>            
+          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isupper</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              x <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
+              a_upper<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">else</span>
+          <span class="token punctuation">{</span>
+              x <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+              a_lower<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> ch <span class="token operator">:</span> S<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isupper</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              x <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
+              <span class="token keyword">if</span><span class="token punctuation">(</span>a_upper<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token operator">++</span>num<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">else</span>
+          <span class="token punctuation">{</span>
+              x <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+              <span class="token keyword">if</span><span class="token punctuation">(</span>a_lower<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token operator">++</span>num<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> 
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
 </ul>
 
             </div>
@@ -798,7 +799,7 @@ public:
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             

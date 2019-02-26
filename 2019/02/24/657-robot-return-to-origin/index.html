@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +368,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        372
+                        355
                     </div>
                     
 
@@ -402,50 +402,51 @@
 <p><strong>Output:</strong> false</p>
 <p><strong>Explanation</strong>: The robot moves left twice. It ends up two “moves” to the left of the origin. We return false because it is not at the origin at the end of its moves.</p>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>设置四个标志位，利用switch-case判断moves的值，相应标志位+1。<br>当‘上’=‘下’并且‘左’=‘右’的时候，机器人回到原点。</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>// code 1：
-// 8ms
-class Solution {
-public:
-    bool judgeCircle(string moves) {
-        vector&lt;int&gt; sign(4,0);
-        for(auto c : moves)
-        {
-            switch(c)
-            {
-                case &#39;U&#39;:
-                    sign[0]++;
-                    break;
-                case &#39;D&#39;:
-                    sign[1]++;
-                    break;
-                case &#39;L&#39;:
-                    sign[2]++;
-                    break;
-                case &#39;R&#39;:
-                    sign[3]++;
-                    break;
-            }
-        }
-        return sign[0] == sign[1] &amp;&amp; sign[2] == sign[3];
-    }
-};
-// code 2：
-// 4ms
-class Solution {
-public:
-    bool judgeCircle(string moves) {
-        int a = 0, b = 0, c = 0, d = 0;
-        for(int i=0;i&lt;moves.size();i++){
-            a+=moves[i]==&#39;R&#39;;
-            b+=moves[i]==&#39;L&#39;;
-            c+=moves[i]==&#39;U&#39;;
-            d+=moves[i]==&#39;D&#39;;
-        }
-        return a == b &amp;&amp; c == d;
-    }
-};
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// code 1：</span>
+<span class="token comment" spellcheck="true">// 8ms</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">judgeCircle</span><span class="token punctuation">(</span>string moves<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">sign</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> c <span class="token operator">:</span> moves<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">switch</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> <span class="token string">'U'</span><span class="token operator">:</span>
+                    sign<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">'D'</span><span class="token operator">:</span>
+                    sign<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">'L'</span><span class="token operator">:</span>
+                    sign<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">'R'</span><span class="token operator">:</span>
+                    sign<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> sign<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> sign<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> sign<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">==</span> sign<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// code 2：</span>
+<span class="token comment" spellcheck="true">// 4ms</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">judgeCircle</span><span class="token punctuation">(</span>string moves<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>moves<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            a<span class="token operator">+</span><span class="token operator">=</span>moves<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'R'</span><span class="token punctuation">;</span>
+            b<span class="token operator">+</span><span class="token operator">=</span>moves<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'L'</span><span class="token punctuation">;</span>
+            c<span class="token operator">+</span><span class="token operator">=</span>moves<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'U'</span><span class="token punctuation">;</span>
+            d<span class="token operator">+</span><span class="token operator">=</span>moves<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'D'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> a <span class="token operator">==</span> b <span class="token operator">&amp;&amp;</span> c <span class="token operator">==</span> d<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 </code></pre>
+
             </div>
             <hr>
 
@@ -769,7 +770,7 @@ Truncate tab</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k</span>
+                <span class="white-color">8.1k</span>
             
 
             
