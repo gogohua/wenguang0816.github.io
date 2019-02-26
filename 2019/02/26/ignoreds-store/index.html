@@ -372,7 +372,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        329
+                        327
                     </div>
                     
 
@@ -413,19 +413,19 @@
 </li>
 </ol>
 <ul>
-<li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre><code>  find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+<li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre><code>find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 </code></pre></li>
-<li>更新项目<pre><code>  git add --all
-  git commit -m &#39;.DS_Store banished!&#39;
+<li>更新项目<pre><code>git add --all
+git commit -m &#39;.DS_Store banished!&#39;
 </code></pre></li>
 </ul>
 <ol start="4">
 <li>当然也可以通过修改系统设置来禁止生成<code>.DS_Store</code>（<em>不推荐此做法</em>）。</li>
 </ol>
 <ul>
-<li>禁止<code>.DS_Store</code>生成：<pre><code>  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+<li>禁止<code>.DS_Store</code>生成：<pre><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 </code></pre></li>
-<li>恢复<code>.DS_Store</code>生成<pre><code>  defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+<li>恢复<code>.DS_Store</code>生成<pre><code>defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 </code></pre>参考博客：</li>
 </ul>
 <ol>
