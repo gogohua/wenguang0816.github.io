@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：509.Fibonacci Number, 云中的Jason">
-    <meta name="description" content="509. Fibonacci NumberThe Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such t">
+    <meta name="keywords" content="macOS下忽略.DS_Store文件, 云中的Jason">
+    <meta name="description" content="macOS下忽略.DS_Store文件在macOS平台下会自动生成.DS_Store文件，在使用git提交的过程中，会发现git将.DS_Store文件一并提交了，这是我们不需要的。我们可以在项目中新建一个.gitignore文件，将.DS">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：509.Fibonacci Number | 云中的Jason</title>
+    <title>macOS下忽略.DS_Store文件 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -239,13 +239,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：509.Fibonacci Number
+                        macOS下忽略.DS_Store文件
                     </div>
                 </div>
             </div>
@@ -337,8 +337,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数组/" target="_blank">
-                                <span class="chip bg-color">数组</span>
+                            <a href="/tags/git/" target="_blank">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/全局忽略/" target="_blank">
+                                <span class="chip bg-color">全局忽略</span>
                             </a>
                         
                     </div>
@@ -349,8 +353,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                分享
                             </a>
                         
                     </div>
@@ -361,14 +365,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-02-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        246
+                        329
                     </div>
                     
 
@@ -391,58 +395,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="509-Fibonacci-Number"><a href="#509-Fibonacci-Number" class="headerlink" title="509. Fibonacci Number"></a><a href="https://leetcode-cn.com/problems/fibonacci-number/" target="_blank" rel="noopener">509. Fibonacci Number</a></h4><p>The <strong>Fibonacci numbers</strong>, commonly denoted <code>F(n)</code> form a sequence, called the <strong>Fibonacci sequence</strong>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p>
-<pre><code>F(0) = 0,   F(1) = 1
-F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
-</code></pre><p>Given <code>N</code>, calculate <code>F(N)</code>.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> <code>2</code></p>
-<p><strong>Output:</strong> <code>1</code></p>
-<p><strong>Explanation:</strong> <code>F(2) = F(1) + F(0) = 1 + 0 = 1.</code></p>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> <code>3</code></p>
-<p><strong>Output:</strong> <code>2</code></p>
-<p><strong>Explanation:</strong> <code>F(3) = F(2) + F(1) = 1 + 1 = 2.</code></p>
-<p><strong>Example 3:</strong></p>
-<p><strong>Input:</strong> <code>4</code></p>
-<p><strong>Output:</strong> <code>3</code></p>
-<p><strong>Explanation:</strong> <code>F(4) = F(3) + F(2) = 2 + 1 = 3.</code></p>
-<p><strong>Note:</strong><br>0 ≤ <code>N</code> ≤ 30.</p>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
-<li>思路1：采用递归的方法</li>
-<li>思路2：采用数组，将斐波那契数存入到数组中。<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre><code>//方法1：
-//效率较低，运行时间20ms
-int fibonacci(int n)
-{
-  if(n == 0)
-      return 0;
-  else if(n == 1)
-      return 1;
-  return fibonacci(n-1) + fibonacci(n-2); 
-}
-class Solution {
-public:
-  int fib(int N) {
-      return fibonacci(N);     
-  }
-};
-//方法2：
-//运行时间0ms
-class Solution {
-public:
-  int fib(int N) {
-      int *p = new int[N+1];//开辟大小为N+1的数组
-      p[0] = 0;
-      p[1] = 1;
-      for(int i = 2; i &lt; N+1; ++i)
-      {
-          p[i] = p[i-1] + p[i-2];
-      }
-      return p[N];
-  }
-};
+                <h1 id="macOS下忽略-DS-Store文件"><a href="#macOS下忽略-DS-Store文件" class="headerlink" title="macOS下忽略.DS_Store文件"></a>macOS下忽略.DS_Store文件</h1><p>在macOS平台下会自动生成<code>.DS_Store</code>文件，在使用git提交的过程中，会发现git将<code>.DS_Store</code>文件一并提交了，这是我们不需要的。我们可以在项目中新建一个<code>.gitignore</code>文件，将<code>.DS_Store</code>添加进去，但是这种方式只对当前项目有效，新建项目之后仍会出现上述问题，所以这里介绍全局忽略<code>.DS_Store</code>的方法。</p>
+<ol>
+<li>在<code>home</code>目录下新建<code>.gitignore_global</code>文件，文件内容如下<pre><code># .gitignore_global
+.DS_Store
+.DS_Store?
+</code></pre></li>
+<li><p>编辑在<code>home</code>目录下的<code>.gitconfig</code>文件，使其引入<code>.gitignore_global</code>的设置。<code>.gitconfig</code>的内容如下：</p>
+<pre><code>[user]
+ name = yourname
+ email = yourname@github.com
+[core]
+ excludesfile = /Users/yourname/.gitignore_global
+</code></pre><p><em>home路径中的yourname和自己的对应</em></p>
+</li>
+<li><p>如果项目中已经出现了<code>.DS_Store</code>文件并且已经提交了，我们需要将<code>.DS_Store</code>文件删除，并再次提交。</p>
+</li>
+</ol>
+<ul>
+<li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre><code>  find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+</code></pre></li>
+<li>更新项目<pre><code>  git add --all
+  git commit -m &#39;.DS_Store banished!&#39;
 </code></pre></li>
 </ul>
+<ol start="4">
+<li>当然也可以通过修改系统设置来禁止生成<code>.DS_Store</code>（<em>不推荐此做法</em>）。</li>
+</ol>
+<ul>
+<li>禁止<code>.DS_Store</code>生成：<pre><code>  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+</code></pre></li>
+<li>恢复<code>.DS_Store</code>生成<pre><code>  defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+</code></pre>参考博客：</li>
+</ul>
+<ol>
+<li><p><a href="https://www.jianshu.com/p/fdaa8be7f6c3" target="_blank" rel="noopener">简书-iOSReverse-如何删除GIT中的.DS_Store</a></p>
+</li>
+<li><p><a href="https://aoenian.github.io/2018/12/19/git-ignore-config/" target="_blank" rel="noopener">个人博客-aoenian</a></p>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -590,7 +581,7 @@ public:
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/509-fibonacci-number/" class="b-link-green">LeetCode刷题：509.Fibonacci Number</a>
+                    <a href="/2019/02/26/ignoreds-store/" class="b-link-green">macOS下忽略.DS_Store文件</a>
                 </p>
             </div>
         </div>
@@ -613,40 +604,46 @@ public:
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/561-array-partition-i/">
+                <a href="/2019/02/26/ignoreds-store/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="LeetCode刷题：561.Array Partition I">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="macOS下忽略.DS_Store文件">
                         
-                        <span class="card-title">LeetCode刷题：561.Array Partition I</span>
+                        <span class="card-title">macOS下忽略.DS_Store文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">561. Array Partition IGiven an array of 2n integers, your task is to group these integers into n pairs of integer, say (</div>
+                    <div class="summary">macOS下忽略.DS_Store文件在macOS平台下会自动生成.DS_Store文件，在使用git提交的过程中，会发现git将.DS_Store文件一并提交了，这是我们不需要的。我们可以在项目中新建一个.gitignore文件，将.DS</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/全局忽略/" target="_blank">
+                        <span class="chip bg-color">全局忽略</span>
                     </a>
                     
                 </div>
@@ -660,17 +657,17 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/476-number-complement/">
+                <a href="/2019/02/24/961-n-repeated-element-in-size-2n-array/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题：476.Number Complement">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题：961.N-Repeated Element in Size 2N Array">
                         
-                        <span class="card-title">LeetCode刷题：476.Number Complement</span>
+                        <span class="card-title">LeetCode刷题：961.N-Repeated Element in Size 2N Array</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bit</div>
+                    <div class="summary">961. N-Repeated Element in Size 2N ArrayIn a array A of size 2N, there are N+1 unique elements, and exactly one of these</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
