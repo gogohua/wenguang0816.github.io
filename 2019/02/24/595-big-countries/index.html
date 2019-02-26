@@ -342,6 +342,10 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                                 <span class="chip bg-color">LeetCode</span>
                             </a>
                         
+                            <a href="/tags/数据库/" target="_blank">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -369,7 +373,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        265
+                        215
                     </div>
                     
 
@@ -393,14 +397,15 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="595-Big-Countries"><a href="#595-Big-Countries" class="headerlink" title="595. Big Countries"></a><a href="https://leetcode-cn.com/problems/big-countries/" target="_blank" rel="noopener">595. Big Countries</a></h4><p>SQL架构</p>
-<pre><code>Create table If Not Exists World (name varchar(255), continent varchar(255), area int, population int, gdp int)
-Truncate table World
-insert into World (name, continent, area, population, gdp) values (&#39;Afghanistan&#39;, &#39;Asia&#39;, &#39;652230&#39;, &#39;25500100&#39;, &#39;20343000000&#39;)
-insert into World (name, continent, area, population, gdp) values (&#39;Albania&#39;, &#39;Europe&#39;, &#39;28748&#39;, &#39;2831741&#39;, &#39;12960000000&#39;)
-insert into World (name, continent, area, population, gdp) values (&#39;Algeria&#39;, &#39;Africa&#39;, &#39;2381741&#39;, &#39;37100000&#39;, &#39;188681000000&#39;)
-insert into World (name, continent, area, population, gdp) values (&#39;Andorra&#39;, &#39;Europe&#39;, &#39;468&#39;, &#39;78115&#39;, &#39;3712000000&#39;)
-insert into World (name, continent, area, population, gdp) values (&#39;Angola&#39;, &#39;Africa&#39;, &#39;1246700&#39;, &#39;20609294&#39;, &#39;100990000000&#39;)
-</code></pre><p>There is a table <code>World</code></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Create</span> <span class="token keyword">table</span> <span class="token keyword">If</span> <span class="token operator">Not</span> <span class="token keyword">Exists</span> World <span class="token punctuation">(</span>name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> continent <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> area <span class="token keyword">int</span><span class="token punctuation">,</span> population <span class="token keyword">int</span><span class="token punctuation">,</span> gdp <span class="token keyword">int</span><span class="token punctuation">)</span>
+<span class="token keyword">Truncate</span> <span class="token keyword">table</span> World
+<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Afghanistan'</span><span class="token punctuation">,</span> <span class="token string">'Asia'</span><span class="token punctuation">,</span> <span class="token string">'652230'</span><span class="token punctuation">,</span> <span class="token string">'25500100'</span><span class="token punctuation">,</span> <span class="token string">'20343000000'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Albania'</span><span class="token punctuation">,</span> <span class="token string">'Europe'</span><span class="token punctuation">,</span> <span class="token string">'28748'</span><span class="token punctuation">,</span> <span class="token string">'2831741'</span><span class="token punctuation">,</span> <span class="token string">'12960000000'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Algeria'</span><span class="token punctuation">,</span> <span class="token string">'Africa'</span><span class="token punctuation">,</span> <span class="token string">'2381741'</span><span class="token punctuation">,</span> <span class="token string">'37100000'</span><span class="token punctuation">,</span> <span class="token string">'188681000000'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Andorra'</span><span class="token punctuation">,</span> <span class="token string">'Europe'</span><span class="token punctuation">,</span> <span class="token string">'468'</span><span class="token punctuation">,</span> <span class="token string">'78115'</span><span class="token punctuation">,</span> <span class="token string">'3712000000'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Angola'</span><span class="token punctuation">,</span> <span class="token string">'Africa'</span><span class="token punctuation">,</span> <span class="token string">'1246700'</span><span class="token punctuation">,</span> <span class="token string">'20609294'</span><span class="token punctuation">,</span> <span class="token string">'100990000000'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>There is a table <code>World</code></p>
 <pre><code>
 +-----------------+------------+------------+--------------+---------------+
 | name            | continent  | area       | population   | gdp           |
@@ -628,6 +633,10 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                         <span class="chip bg-color">LeetCode</span>
                     </a>
                     
+                    <a href="/tags/数据库/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -744,7 +753,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.1k</span>
+                <span class="white-color">7.9k</span>
             
 
             

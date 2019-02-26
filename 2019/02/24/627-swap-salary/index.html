@@ -343,6 +343,10 @@ Truncate tab">
                                 <span class="chip bg-color">LeetCode</span>
                             </a>
                         
+                            <a href="/tags/数据库/" target="_blank">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -370,7 +374,7 @@ Truncate tab">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        246
+                        214
                     </div>
                     
 
@@ -394,13 +398,14 @@ Truncate tab">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="627-Swap-Salary"><a href="#627-Swap-Salary" class="headerlink" title="627. Swap Salary"></a><a href="https://leetcode-cn.com/problems/swap-salary/" target="_blank" rel="noopener">627. Swap Salary</a></h4><p>SQL架构</p>
-<pre><code>create table if not exists salary(id int, name varchar(100), sex char(1), salary int)
-Truncate table salary
-insert into salary (id, name, sex, salary) values (&#39;1&#39;, &#39;A&#39;, &#39;m&#39;, &#39;2500&#39;)
-insert into salary (id, name, sex, salary) values (&#39;2&#39;, &#39;B&#39;, &#39;f&#39;, &#39;1500&#39;)
-insert into salary (id, name, sex, salary) values (&#39;3&#39;, &#39;C&#39;, &#39;m&#39;, &#39;5500&#39;)
-insert into salary (id, name, sex, salary) values (&#39;4&#39;, &#39;D&#39;, &#39;f&#39;, &#39;500&#39;)
-</code></pre><p>Given a table <code>salary</code>, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.For example:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span> salary<span class="token punctuation">(</span>id <span class="token keyword">int</span><span class="token punctuation">,</span> name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sex char<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> salary <span class="token keyword">int</span><span class="token punctuation">)</span>
+<span class="token keyword">Truncate</span> <span class="token keyword">table</span> salary
+<span class="token keyword">insert</span> <span class="token keyword">into</span> salary <span class="token punctuation">(</span>id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token string">'2500'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> salary <span class="token punctuation">(</span>id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'1500'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> salary <span class="token punctuation">(</span>id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token string">'5500'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> salary <span class="token punctuation">(</span>id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'500'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Given a table <code>salary</code>, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.For example:</p>
 <pre><code>| id | name | sex | salary |
 |----|------|-----|--------|
 | 1  | A    | m   | 2500   |
@@ -672,6 +677,10 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                         <span class="chip bg-color">LeetCode</span>
                     </a>
                     
+                    <a href="/tags/数据库/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -743,7 +752,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.1k</span>
+                <span class="white-color">7.9k</span>
             
 
             

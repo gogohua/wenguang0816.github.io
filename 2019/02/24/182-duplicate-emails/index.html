@@ -344,6 +344,10 @@ insert i">
                                 <span class="chip bg-color">LeetCode</span>
                             </a>
                         
+                            <a href="/tags/数据库/" target="_blank">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -371,7 +375,7 @@ insert i">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        196
+                        184
                     </div>
                     
 
@@ -395,12 +399,13 @@ insert i">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="182-Duplicate-Emails"><a href="#182-Duplicate-Emails" class="headerlink" title="182. Duplicate Emails"></a><a href="https://leetcode-cn.com/problems/duplicate-emails/" target="_blank" rel="noopener">182. Duplicate Emails</a></h4><p>SQL架构</p>
-<pre><code>Create table If Not Exists Person (Id int, Email varchar(255))
-Truncate table Person
-insert into Person (Id, Email) values (&#39;1&#39;, &#39;a@b.com&#39;)
-insert into Person (Id, Email) values (&#39;2&#39;, &#39;c@d.com&#39;)
-insert into Person (Id, Email) values (&#39;3&#39;, &#39;a@b.com&#39;)
-</code></pre><p>Write a SQL query to find all duplicate emails in a table named <code>Person</code>.</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Create</span> <span class="token keyword">table</span> <span class="token keyword">If</span> <span class="token operator">Not</span> <span class="token keyword">Exists</span> Person <span class="token punctuation">(</span>Id <span class="token keyword">int</span><span class="token punctuation">,</span> Email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">Truncate</span> <span class="token keyword">table</span> Person
+<span class="token keyword">insert</span> <span class="token keyword">into</span> Person <span class="token punctuation">(</span>Id<span class="token punctuation">,</span> Email<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'a@b.com'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> Person <span class="token punctuation">(</span>Id<span class="token punctuation">,</span> Email<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'c@d.com'</span><span class="token punctuation">)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> Person <span class="token punctuation">(</span>Id<span class="token punctuation">,</span> Email<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'a@b.com'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Write a SQL query to find all duplicate emails in a table named <code>Person</code>.</p>
 <p><strong>Example:</strong></p>
 <pre><code>+----+---------+
 | Id | Email   |
@@ -742,7 +747,7 @@ insert into Person (Id, Email) values (&#39;3&#39;, &#39;a@b.com&#39;)
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.1k</span>
+                <span class="white-color">7.9k</span>
             
 
             
