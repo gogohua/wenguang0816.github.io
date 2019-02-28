@@ -406,23 +406,74 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 <span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token string">'House card'</span><span class="token punctuation">,</span> <span class="token string">'Interesting'</span><span class="token punctuation">,</span> <span class="token string">'9.1'</span><span class="token punctuation">)</span>
 </code></pre>
 <p>X city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.<br>Please write a SQL query to output movies with an odd numbered ID and a description that is not ‘boring’. Order the result by rating.<br>For example, table <code>cinema</code>:</p>
-<pre><code>+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   1     | War       |   great 3D   |   8.9     |
-|   2     | Science   |   fiction    |   8.5     |
-|   3     | irish     |   boring     |   6.2     |
-|   4     | Ice song  |   Fantacy    |   8.6     |
-|   5     | House card|   Interesting|   9.1     |
-+---------+-----------+--------------+-----------+
-</code></pre><p>For the example above, the output should be:</p>
-<pre><code>+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   5     | House card|   Interesting|   9.1     |
-|   1     | War       |   great 3D   |   8.9     |
-+---------+-----------+--------------+-----------+
-</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过<code>description</code>和<code>id</code>进行筛选，然后通过<code>rating</code>进行倒序排序（<code>DESC</code>）</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>movie</th>
+<th>description</th>
+<th>rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>War</td>
+<td>great 3D</td>
+<td>8.9</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Science</td>
+<td>fiction</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>irish</td>
+<td>boring</td>
+<td>6.2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ice song</td>
+<td>Fantacy</td>
+<td>8.6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>House card</td>
+<td>Interesting</td>
+<td>9.1</td>
+</tr>
+</tbody>
+</table>
+<p>For the example above, the output should be:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>movie</th>
+<th>description</th>
+<th>rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>House card</td>
+<td>Interesting</td>
+<td>9.1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>War</td>
+<td>great 3D</td>
+<td>8.9</td>
+</tr>
+</tbody>
+</table>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过<code>description</code>和<code>id</code>进行筛选，然后通过<code>rating</code>进行倒序排序（<code>DESC</code>）</p>
 <h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating
 <span class="token keyword">FROM</span> cinema
 <span class="token keyword">WHERE</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> description <span class="token operator">!=</span> <span class="token string">'boring'</span>

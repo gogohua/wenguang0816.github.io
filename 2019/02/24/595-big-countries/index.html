@@ -406,24 +406,77 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
 <span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Angola'</span><span class="token punctuation">,</span> <span class="token string">'Africa'</span><span class="token punctuation">,</span> <span class="token string">'1246700'</span><span class="token punctuation">,</span> <span class="token string">'20609294'</span><span class="token punctuation">,</span> <span class="token string">'100990000000'</span><span class="token punctuation">)</span>
 </code></pre>
 <p>There is a table <code>World</code></p>
-<pre><code>
-+-----------------+------------+------------+--------------+---------------+
-| name            | continent  | area       | population   | gdp           |
-+-----------------+------------+------------+--------------+---------------+
-| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
-| Albania         | Europe     | 28748      | 2831741      | 12960000      |
-| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
-| Andorra         | Europe     | 468        | 78115        | 3712000       |
-| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
-+-----------------+------------+------------+--------------+---------------+
-</code></pre><p>A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.<br>Write a SQL solution to output big countries’ name, population and area.<br>For example, according to the above table, we should output:</p>
-<pre><code>+--------------+-------------+--------------+
-| name         | population  | area         |
-+--------------+-------------+--------------+
-| Afghanistan  | 25500100    | 652230       |
-| Algeria      | 37100000    | 2381741      |
-+--------------+-------------+--------------+
-</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用人口和面积进行筛选</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>continent</th>
+<th>area</th>
+<th>population</th>
+<th>gdp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afghanistan</td>
+<td>Asia</td>
+<td>652230</td>
+<td>25500100</td>
+<td>20343000</td>
+</tr>
+<tr>
+<td>Albania</td>
+<td>Europe</td>
+<td>28748</td>
+<td>2831741</td>
+<td>12960000</td>
+</tr>
+<tr>
+<td>Algeria</td>
+<td>Africa</td>
+<td>2381741</td>
+<td>37100000</td>
+<td>188681000</td>
+</tr>
+<tr>
+<td>Andorra</td>
+<td>Europe</td>
+<td>468</td>
+<td>78115</td>
+<td>3712000</td>
+</tr>
+<tr>
+<td>Angola</td>
+<td>Africa</td>
+<td>1246700</td>
+<td>20609294</td>
+<td>100990000</td>
+</tr>
+</tbody>
+</table>
+<p>A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.<br>Write a SQL solution to output big countries’ name, population and area.<br>For example, according to the above table, we should output:</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>population</th>
+<th>area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afghanistan</td>
+<td>25500100</td>
+<td>652230</td>
+</tr>
+<tr>
+<td>Algeria</td>
+<td>37100000</td>
+<td>2381741</td>
+</tr>
+</tbody>
+</table>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用人口和面积进行筛选</p>
 <h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> name<span class="token punctuation">,</span> population<span class="token punctuation">,</span> area <span class="token keyword">from</span> World <span class="token keyword">where</span> area <span class="token operator">></span> <span class="token number">3000000</span> <span class="token operator">or</span> population <span class="token operator">></span> <span class="token number">25000000</span><span class="token punctuation">;</span>
 </code></pre>
 

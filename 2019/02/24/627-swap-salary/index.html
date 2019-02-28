@@ -406,20 +406,80 @@ Truncate tab">
 <span class="token keyword">insert</span> <span class="token keyword">into</span> salary <span class="token punctuation">(</span>id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'500'</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Given a table <code>salary</code>, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.For example:</p>
-<pre><code>| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | m   | 2500   |
-| 2  | B    | f   | 1500   |
-| 3  | C    | m   | 5500   |
-| 4  | D    | f   | 500    |
-</code></pre><p>After running your query, the above salary table should have the following rows:</p>
-<pre><code>| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | f   | 2500   |
-| 2  | B    | m   | 1500   |
-| 3  | C    | f   | 5500   |
-| 4  | D    | m   | 500    |
-</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用SQL中的case-when多条件判断语句，类似C++中的switch-case语句</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>sex</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>m</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>f</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>m</td>
+<td>5500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+<td>f</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>After running your query, the above salary table should have the following rows:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>sex</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>f</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>m</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>f</td>
+<td>5500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+<td>m</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用SQL中的case-when多条件判断语句，类似C++中的switch-case语句</p>
 <h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> salary
 <span class="token keyword">SET</span> sex <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">CASE</span> sex <span class="token keyword">WHEN</span> <span class="token string">'m'</span> <span class="token keyword">THEN</span> <span class="token string">'f'</span>
                     <span class="token keyword">WHEN</span> <span class="token string">'f'</span> <span class="token keyword">THEN</span> <span class="token string">'m'</span>

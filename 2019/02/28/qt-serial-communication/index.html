@@ -5,12 +5,14 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="QT5串口通信（Hex格式传输）, 云中的Jason">
-    <meta name="description" content="参考博客：
+    <meta name="description" content="参考博客
 博客园-菜头大大：QT串口通信
 CSDN-宗师之路：QT实现串口通信(附源码下载)
-CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
+CSDN-xz-c：C++将10进制字符串转为16进制字符串
+
+本文改进
 在前辈们的代码基础上进行改进，使操作更符合逻辑
-优化代码结构，提高了代码的">
+优化代码结构，提高了代码">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -400,18 +402,24 @@ CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><ol>
+                <h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
 <li>博客园-菜头大大：<a href="https://www.cnblogs.com/wurenzhong/p/8186437.html" target="_blank" rel="noopener">QT串口通信</a></li>
 <li>CSDN-宗师之路：<a href="https://blog.csdn.net/qq_27312943/article/details/52900527" target="_blank" rel="noopener">QT实现串口通信(附源码下载)</a></li>
-<li>CSDN-xz-c：<a href="https://blog.csdn.net/u014602230/article/details/52752683" target="_blank" rel="noopener">C++将10进制字符串转为16进制字符串</a><h2 id="本文改进"><a href="#本文改进" class="headerlink" title="本文改进"></a>本文改进</h2></li>
+<li>CSDN-xz-c：<a href="https://blog.csdn.net/u014602230/article/details/52752683" target="_blank" rel="noopener">C++将10进制字符串转为16进制字符串</a></li>
+</ol>
+<h2 id="本文改进"><a href="#本文改进" class="headerlink" title="本文改进"></a>本文改进</h2><ol>
 <li>在前辈们的代码基础上进行改进，使操作更符合逻辑</li>
-<li>优化代码结构，提高了代码的可移植性<h2 id="QT实现串口通信"><a href="#QT实现串口通信" class="headerlink" title="QT实现串口通信"></a>QT实现串口通信</h2></li>
+<li>优化代码结构，提高了代码的可移植性</li>
+</ol>
+<h2 id="QT实现串口通信"><a href="#QT实现串口通信" class="headerlink" title="QT实现串口通信"></a>QT实现串口通信</h2><ol>
 <li>在工程文件（.pro）中添加串口通信相关运行库：<code>QT       += serialport</code></li>
 <li>在头文件中添加<pre class=" language-cpp"><code class="language-cpp"> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QtSerialPort/QSerialPort></span></span>
  <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QtSerialPort/QSerialPortInfo></span></span>
 </code></pre>
 </li>
-<li>在头文件中定义全局的串口对象：<code>QSerialPort *serial;</code><h2 id="串口通讯步骤"><a href="#串口通讯步骤" class="headerlink" title="串口通讯步骤"></a>串口通讯步骤</h2></li>
+<li>在头文件中定义全局的串口对象：<code>QSerialPort *serial;</code></li>
+</ol>
+<h2 id="串口通信步骤"><a href="#串口通信步骤" class="headerlink" title="串口通信步骤"></a>串口通信步骤</h2><ol>
 <li>设置串口名称<ul>
 <li>寻找可用串口<pre class=" language-cpp"><code class="language-cpp">  <span class="token keyword">void</span> control<span class="token operator">::</span><span class="token function">scanPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">{</span>
@@ -464,7 +472,10 @@ CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
 </li>
 <li>从上位机发送数据到下位机，发送内容位ASII码值或者为Hex格式；根据自身需求，我将数据进行了转换和格式化，此处为Hex格式。<pre class=" language-cpp"><code class="language-cpp"> serial<span class="token operator">-</span><span class="token operator">></span><span class="token function">write</span><span class="token punctuation">(</span><span class="token function">QString2Hex</span><span class="token punctuation">(</span><span class="token function">formatInput</span><span class="token punctuation">(</span>hexStr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="进制转换及格式化"><a href="#进制转换及格式化" class="headerlink" title="进制转换及格式化"></a>进制转换及格式化</h2>由于下位机需求，需要两帧将数据发送过去，经过多番考虑，最终决定将十进制转换为16进制，然后以Hex进行发送</li>
+</li>
+</ol>
+<h2 id="进制转换及格式化"><a href="#进制转换及格式化" class="headerlink" title="进制转换及格式化"></a>进制转换及格式化</h2><p>由于下位机需求，需要两帧将数据发送过去，经过多番考虑，最终决定将十进制转换为16进制，然后以Hex进行发送</p>
+<ol>
 <li>十进制转换为16进制字符串<pre class=" language-cpp"><code class="language-cpp"> <span class="token comment" spellcheck="true">//将十进制int转换为十六进制字符串</span>
  QString control<span class="token operator">::</span><span class="token function">decInt2HexStr</span><span class="token punctuation">(</span><span class="token keyword">int</span> dec<span class="token punctuation">)</span>
  <span class="token punctuation">{</span>
@@ -570,8 +581,10 @@ CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
      <span class="token keyword">return</span> hexStr<span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="UI展示"><a href="#UI展示" class="headerlink" title="UI展示"></a>UI展示</h2><img src="https://upload-images.jianshu.io/upload_images/14484228-06891a8bb97b3885.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="界面展示"><h2 id="源码下载："><a href="#源码下载：" class="headerlink" title="源码下载："></a>源码下载：</h2><a href="https://github.com/2572880761/FPGA_Controller" target="_blank" rel="noopener">Github</a></li>
+</li>
 </ol>
+<h2 id="UI展示"><a href="#UI展示" class="headerlink" title="UI展示"></a>UI展示</h2><p><img src="https://upload-images.jianshu.io/upload_images/14484228-06891a8bb97b3885.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="界面展示"></p>
+<h2 id="源码下载："><a href="#源码下载：" class="headerlink" title="源码下载："></a>源码下载：</h2><p><a href="https://github.com/2572880761/FPGA_Controller" target="_blank" rel="noopener">Github</a></p>
 
             </div>
             <hr>
@@ -754,12 +767,14 @@ CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">参考博客：
+                    <div class="summary">参考博客
 博客园-菜头大大：QT串口通信
 CSDN-宗师之路：QT实现串口通信(附源码下载)
-CSDN-xz-c：C++将10进制字符串转为16进制字符串本文改进
+CSDN-xz-c：C++将10进制字符串转为16进制字符串
+
+本文改进
 在前辈们的代码基础上进行改进，使操作更符合逻辑
-优化代码结构，提高了代码的</div>
+优化代码结构，提高了代码</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-28
