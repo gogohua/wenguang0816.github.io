@@ -393,6 +393,7 @@
             <div id="articleContent">
                 <h4 id="807-Max-Increase-to-Keep-City-Skyline"><a href="#807-Max-Increase-to-Keep-City-Skyline" class="headerlink" title="807. Max Increase to Keep City Skyline"></a><a href="https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/" target="_blank" rel="noopener">807. Max Increase to Keep City Skyline</a></h4><p>In a 2 dimensional array <code>grid</code>, each value <code>grid[i][j]</code> represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well.<br>At the end, the “skyline” when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid. A city’s skyline is the outer contour of the rectangles formed by all the buildings when viewed from a distance. See the following example.<br>What is the maximum total sum that the height of the buildings can be increased?</p>
 <p><strong>Example:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> <code>grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]</code></p>
 <p><strong>Output:</strong> <code>35</code></p>
 <p><strong>Explanation:</strong> </p>
@@ -412,7 +413,10 @@ gridNew = [ [8, 4, 8, 7],
 <ul>
 <li><code>1 &lt; grid.length = grid[0].length &lt;= 50</code>.</li>
 <li>All heights <code>grid[i][j]</code> are in the range <code>[0, 100]</code>.</li>
-<li>All buildings in <code>grid[i][j]</code> occupy the entire grid cell: that is, they are a <code>1 x 1 x grid[i][j]</code> rectangular prism.<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5></li>
+<li>All buildings in <code>grid[i][j]</code> occupy the entire grid cell: that is, they are a <code>1 x 1 x grid[i][j]</code> rectangular prism.</li>
+</ul>
+</blockquote>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
 <li>遍历<code>grid</code>获取skyline数值存入到<code>col</code>和<code>row</code>中；</li>
 <li>遍历<code>grid</code>，利用<code>col</code>和<code>row</code>中最小的skyline值来计算最大增量，最后得出结果；<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -757,7 +761,7 @@ gridNew = [ [8, 4, 8, 7],
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.9k</span>
+                <span class="white-color">8.1k</span>
             
 
             

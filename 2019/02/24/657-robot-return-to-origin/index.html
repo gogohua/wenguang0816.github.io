@@ -394,13 +394,17 @@
                 <h4 id="657-Robot-Return-to-Origin"><a href="#657-Robot-Return-to-Origin" class="headerlink" title="657. Robot Return to Origin"></a><a href="https://leetcode-cn.com/problems/robot-return-to-origin/" target="_blank" rel="noopener">657. Robot Return to Origin</a></h4><p>There is a robot starting at position (0, 0), the origin, on a 2D plane. Given a sequence of its moves, judge if this robot <strong>ends up at (0, 0)</strong> after it completes its moves.<br>The move sequence is represented by a string, and the character moves[i] represents its ith move. Valid moves are R (right), L (left), U (up), and D (down). If the robot returns to the origin after it finishes all of its moves, return true. Otherwise, return false.</p>
 <p><strong>Note</strong>: The way that the robot is “facing” is irrelevant. “R” will always make the robot move to the right once, “L” will always make it move left, etc. Also, assume that the magnitude of the robot’s movement is the same for each move.</p>
 <p><strong>Example 1:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> “UD”</p>
 <p><strong>Output:</strong> true </p>
 <p><strong>Explanation</strong>: The robot moves up once, and then down once. All moves have the same magnitude, so it ended up at the origin where it started. Therefore, we return true.</p>
+</blockquote>
 <p><strong>Example 2:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> “LL”</p>
 <p><strong>Output:</strong> false</p>
 <p><strong>Explanation</strong>: The robot moves left twice. It ends up two “moves” to the left of the origin. We return false because it is not at the origin at the end of its moves.</p>
+</blockquote>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>设置四个标志位，利用switch-case判断moves的值，相应标志位+1。<br>当‘上’=‘下’并且‘左’=‘右’的时候，机器人回到原点。</p>
 <h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// code 1：</span>
 <span class="token comment" spellcheck="true">// 8ms</span>
@@ -774,7 +778,7 @@ Truncate tab</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.9k</span>
+                <span class="white-color">8.1k</span>
             
 
             

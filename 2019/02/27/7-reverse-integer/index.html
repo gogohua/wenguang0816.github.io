@@ -4,9 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：620.Not Boring Movies, 云中的Jason">
-    <meta name="description" content="620. Not Boring MoviesSQL架构
-Create table If Not Exists cinema (id int, movie varchar(255), description varchar(255), rat">
+    <meta name="keywords" content="LeetCode刷题：7.Reverse Integer, 云中的Jason">
+    <meta name="description" content="7. Reverse IntegerGiven a 32-bit signed integer, reverse digits of an integer.Example 1:
+
+Input: 123
+Output: 321
+
+Exampl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：620.Not Boring Movies | 云中的Jason</title>
+    <title>LeetCode刷题：7.Reverse Integer | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -240,13 +244,13 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：620.Not Boring Movies
+                        LeetCode刷题：7.Reverse Integer
                     </div>
                 </div>
             </div>
@@ -338,12 +342,8 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
-                            </a>
-                        
-                            <a href="/tags/数据库/" target="_blank">
-                                <span class="chip bg-color">数据库</span>
+                            <a href="/tags/数学/" target="_blank">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
                     </div>
@@ -366,14 +366,14 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-02-27
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        252
+                        214
                     </div>
                     
 
@@ -396,37 +396,41 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="620-Not-Boring-Movies"><a href="#620-Not-Boring-Movies" class="headerlink" title="620. Not Boring Movies"></a><a href="https://leetcode-cn.com/problems/not-boring-movies/" target="_blank" rel="noopener">620. Not Boring Movies</a></h4><p>SQL架构</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Create</span> <span class="token keyword">table</span> <span class="token keyword">If</span> <span class="token operator">Not</span> <span class="token keyword">Exists</span> cinema <span class="token punctuation">(</span>id <span class="token keyword">int</span><span class="token punctuation">,</span> movie <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> description <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rating <span class="token keyword">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">Truncate</span> <span class="token keyword">table</span> cinema
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'War'</span><span class="token punctuation">,</span> <span class="token string">'great 3D'</span><span class="token punctuation">,</span> <span class="token string">'8.9'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'Science'</span><span class="token punctuation">,</span> <span class="token string">'fiction'</span><span class="token punctuation">,</span> <span class="token string">'8.5'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'irish'</span><span class="token punctuation">,</span> <span class="token string">'boring'</span><span class="token punctuation">,</span> <span class="token string">'6.2'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'Ice song'</span><span class="token punctuation">,</span> <span class="token string">'Fantacy'</span><span class="token punctuation">,</span> <span class="token string">'8.6'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token string">'House card'</span><span class="token punctuation">,</span> <span class="token string">'Interesting'</span><span class="token punctuation">,</span> <span class="token string">'9.1'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>X city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.<br>Please write a SQL query to output movies with an odd numbered ID and a description that is not ‘boring’. Order the result by rating.<br>For example, table <code>cinema</code>:</p>
-<pre><code>+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   1     | War       |   great 3D   |   8.9     |
-|   2     | Science   |   fiction    |   8.5     |
-|   3     | irish     |   boring     |   6.2     |
-|   4     | Ice song  |   Fantacy    |   8.6     |
-|   5     | House card|   Interesting|   9.1     |
-+---------+-----------+--------------+-----------+
-</code></pre><p>For the example above, the output should be:</p>
-<pre><code>+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   5     | House card|   Interesting|   9.1     |
-|   1     | War       |   great 3D   |   8.9     |
-+---------+-----------+--------------+-----------+
-</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过<code>description</code>和<code>id</code>进行筛选，然后通过<code>rating</code>进行倒序排序（<code>DESC</code>）</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating
-<span class="token keyword">FROM</span> cinema
-<span class="token keyword">WHERE</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> description <span class="token operator">!=</span> <span class="token string">'boring'</span>
-<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> rating <span class="token keyword">DESC</span>
+                <h4 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7. Reverse Integer"></a><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">7. Reverse Integer</a></h4><p>Given a 32-bit signed integer, reverse digits of an integer.<br><strong>Example 1:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> <code>123</code></p>
+<p><strong>Output:</strong> <code>321</code></p>
+</blockquote>
+<p><strong>Example 2:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> <code>-123</code></p>
+<p><strong>Output:</strong> <code>-321</code></p>
+</blockquote>
+<p><strong>Example 3:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> <code>120</code></p>
+<p><strong>Output:</strong> <code>21</code></p>
+</blockquote>
+<p><strong>Note:</strong><br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2<sup>31</sup>,  2<sup>31 </sup>− 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>初始化一个<code>long long</code>类型的变量<code>ans</code>用于保存反转后的整数，每次执行以下操作：</p>
+<ol>
+<li><code>ans = ans * 10 + x % 10;</code></li>
+<li><code>x /= 10;</code></li>
+</ol>
+<p>最后判断<code>ans</code>是否溢出，溢出则返回0，否则返回<code>ans</code><br><em>在第一次尝试时，忽略了反转后的数字可能出现溢出的情况，定义int类型的ans会导致溢出，所以将ans定义为 long long类型</em></p>
+<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//INT_MAX : 2147483647 </span>
+        <span class="token comment" spellcheck="true">//INT_MIN : -2147483648</span>
+        <span class="token keyword">long</span> <span class="token keyword">long</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ans <span class="token operator">=</span> ans <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+            x <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>ans <span class="token operator">></span> INT_MAX <span class="token operator">||</span> ans <span class="token operator">&lt;</span> INT_MIN<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
             </div>
@@ -575,7 +579,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/620-not-boring-movies/" class="b-link-green">LeetCode刷题：620.Not Boring Movies</a>
+                    <a href="/2019/02/27/7-reverse-integer/" class="b-link-green">LeetCode刷题：7.Reverse Integer</a>
                 </p>
             </div>
         </div>
@@ -598,74 +602,28 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/627-swap-salary/">
+                <a href="/2019/02/27/7-reverse-integer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题：627.Swap Salary">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="LeetCode刷题：7.Reverse Integer">
                         
-                        <span class="card-title">LeetCode刷题：627.Swap Salary</span>
+                        <span class="card-title">LeetCode刷题：7.Reverse Integer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">627. Swap SalarySQL架构
-create table if not exists salary(id int, name varchar(100), sex char(1), salary int)
-Truncate tab</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
-                    </a>
-                    
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/02/24/595-big-countries/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode刷题：595.Big Countries">
-                        
-                        <span class="card-title">LeetCode刷题：595.Big Countries</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">595. Big CountriesSQL架构
-Create table If Not Exists World (name varchar(255), continent varchar(255), area int, populatio</div>
+                    <div class="summary">7. Reverse IntegerGiven a 32-bit signed integer, reverse digits of an integer.Example 1:
+
+Input: 123
+Output: 321
+
+Exampl</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-27
                             </span>
                         <span class="publish-author">
                             
@@ -679,15 +637,61 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/数学/" target="_blank">
+                        <span class="chip bg-color">数学</span>
                     </a>
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/26/ignoreds-store/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="macOS下忽略.DS_Store文件">
+                        
+                        <span class="card-title">macOS下忽略.DS_Store文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">macOS下忽略.DS_Store文件在macOS平台下会自动生成.DS_Store文件，在使用git提交的过程中，会发现git将.DS_Store文件一并提交了，这是我们不需要的。我们可以在项目中新建一个.gitignore文件，将.DS</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/全局忽略/" target="_blank">
+                        <span class="chip bg-color">全局忽略</span>
                     </a>
                     
                 </div>

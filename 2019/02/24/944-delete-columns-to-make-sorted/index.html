@@ -393,17 +393,23 @@
             <div id="articleContent">
                 <h4 id="944-Delete-Columns-to-Make-Sorted"><a href="#944-Delete-Columns-to-Make-Sorted" class="headerlink" title="944. Delete Columns to Make Sorted"></a><a href="https://leetcode-cn.com/problems/delete-columns-to-make-sorted/" target="_blank" rel="noopener">944. Delete Columns to Make Sorted</a></h4><p>We are given an array <code>A</code> of <code>N</code> lowercase letter strings, all of the same length.<br>Now, we may choose any set of deletion indices, and for each string, we delete all the characters in those indices.<br>For example, if we have an array <code>A = [&quot;abcdef&quot;,&quot;uvwxyz&quot;]</code> and deletion indices <code>{0, 2, 3}</code>, then the final array after deletions is <code>[&quot;bef&quot;, &quot;vyz&quot;]</code>, and the remaining columns of <code>A</code> are <code>[&quot;b&quot;,&quot;v&quot;]</code>, <code>[&quot;e&quot;,&quot;y&quot;]</code>, and <code>[&quot;f&quot;,&quot;z&quot;]</code>.  (Formally, the <code>c</code>-th column is <code>[A[0][c], A[1][c], ..., A[A.length-1][c]]</code>.)<br>Suppose we chose a set of deletion indices <code>D</code> such that after deletions, each remaining column in A is in <strong>non-decreasing</strong> sorted order.<br>Return the minimum possible value of <code>D.length</code>.</p>
 <p><strong>Example 1:</strong></p>
+<blockquote>
 <p><strong>Input:</strong><code>[&quot;cba&quot;,&quot;daf&quot;,&quot;ghi&quot;]</code></p>
 <p><strong>Output:</strong> <code>1</code></p>
 <p><strong>Explanation:</strong><br>After choosing D = {1}, each column <code>[&quot;c&quot;,&quot;d&quot;,&quot;g&quot;]</code> and <code>[&quot;a&quot;,&quot;f&quot;,&quot;i&quot;]</code> are in non-decreasing sorted order.<br>If we chose D = {}, then a column <code>[&quot;b&quot;,&quot;a&quot;,&quot;h&quot;]</code> would not be in non-decreasing sorted order.</p>
+</blockquote>
 <p><strong>Example 2:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> <code>[&quot;a&quot;,&quot;b&quot;]</code></p>
 <p><strong>Output:</strong> <code>0</code></p>
 <p><strong>Explanation:</strong> <code>D = {}</code></p>
+</blockquote>
 <p><strong>Example 3:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> <code>[&quot;zyx&quot;,&quot;wvu&quot;,&quot;tsr&quot;]</code></p>
 <p><strong>Output:</strong> <code>3</code></p>
 <p><strong>Explanation:</strong> <code>D = {0, 1, 2}</code></p>
+</blockquote>
 <p><strong>Note:</strong></p>
 <ol>
 <li><code>1 &lt;= A.length &lt;= 100</code></li>
@@ -754,7 +760,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.9k</span>
+                <span class="white-color">8.1k</span>
             
 
             

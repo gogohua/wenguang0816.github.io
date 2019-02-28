@@ -398,13 +398,17 @@
 <li>You could assume no leading zero bit in the integer’s binary representation.</li>
 </ol>
 <p><strong>Example 1:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> <code>5</code></p>
 <p><strong>Output:</strong> <code>2</code></p>
 <p><strong>Explanation:</strong> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.</p>
+</blockquote>
 <p><strong>Example 2:</strong></p>
+<blockquote>
 <p><strong>Input:</strong> <code>1</code></p>
 <p><strong>Output:</strong> <code>0</code></p>
 <p><strong>Explanation:</strong> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.</p>
+</blockquote>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>题例中<code>5</code>的二进制为<code>101</code>，补数为<code>010</code>,补数可以通过<code>101 ^ 111</code>获得，所以首先获取与num相同二进制位数的<code>111</code>，通过判断<code>num</code>左移1位是否为空可以获得其位数，进而获取<code>mask</code>。</p>
 <h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -740,7 +744,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.9k</span>
+                <span class="white-color">8.1k</span>
             
 
             
