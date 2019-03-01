@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 云中的Jason">
-    <meta name="description" content="标签 | 云中的Jason">
+    <meta name="keywords" content="friends, 云中的Jason">
+    <meta name="description" content="friends | 云中的Jason">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签 | 云中的Jason</title>
+    <title>friends | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -278,139 +278,253 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </script>
     </div>
 </div>
+<style>
+    .friends-container {
+        margin-top: -100px;
+    }
 
-<main class="content">
+    .frind-ship img {
+        border-radius: 50%;
+    }
 
-    
+    /* 一下是按钮样式 */
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/数组/" title="数组: 10">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数组" style="background-color: #F9EBEA;">数组
-                        <span class="tag-length">10</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/LeetCode/" title="LeetCode: 21">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="LeetCode" style="background-color: #F5EEF8;">LeetCode
-                        <span class="tag-length">21</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/数据库/" title="数据库: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数据库" style="background-color: #D5F5E3;">数据库
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/哈希表/" title="哈希表: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="哈希表" style="background-color: #E8F8F5;">哈希表
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/位运算/" title="位运算: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="位运算" style="background-color: #FEF9E7;">位运算
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/数学/" title="数学: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数学" style="background-color: #F8F9F9;">数学
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/回溯算法/" title="回溯算法: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="回溯算法" style="background-color: #82E0AA;">回溯算法
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/git/" title="git: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="git" style="background-color: #D7BDE2;">git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/全局忽略/" title="全局忽略: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="全局忽略" style="background-color: #A3E4D7;">全局忽略
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/QT5/" title="QT5: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="QT5" style="background-color: #85C1E9;">QT5
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/串口通信/" title="串口通信: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="串口通信" style="background-color: #F8C471;">串口通信
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</div>
+    .frind-ship {
+        padding: 10px 20px;
+    }
 
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
+    .frind-ship .title {
+        display: flex;
+        align-items: center;
+    }
+
+    .frind-ship .title div {
+        color: #fff;
+        padding-left: 10px;
+    }
+
+    .frind-ship .title img {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+
+    .frind-ship .title h1 {
+        line-height: 0.8rem;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #fff;
+    }
+
+    .friend-button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: -27px;
+    }
+
+    .friend-button a {
+        border-radius: 40px;
+    }
+
+    .friend-all .tag-post {
+        margin-bottom: 30px;
+    }
+
+    .button-caution {
+        background-color: #FF4351;
+        border-color: #FF4351;
+        color: #FFF;
+    }
+
+    .button {
+        font-weight: 300;
+        font-size: 16px;
+        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px;
+        height: 40px;
+        padding: 0 40px;
+        margin: 0;
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+    }
+
+    .title {
+        margin-bottom: 0rem !important;
+    }
+
+    .card {
+        margin: 3rem 0 1rem 0 !important;
+    }
+
+    .button-glow.button-caution {
+        -webkit-animation-name: glowing-caution;
+        animation-name: glowing-caution;
+    }
+
+    @-webkit-keyframes glowing-caution {
+        from {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+
+        50% {
+            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+        }
+
+        to {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+    }
+
+    @keyframes glowing-caution {
+        from {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+
+        50% {
+            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+        }
+
+        to {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+    }
+
+    .button-caution:hover {
+        background-color: #ff7680;
+        border-color: #ff7680;
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    .frind-card1 {
+        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .frind-card2 {
+        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .frind-card3 {
+        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    }
+
+    .frind-card4 {
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
+
+    .frind-card5 {
+        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+    }
+
+    .frind-card6 {
+        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+    }
+
+    .frind-card7 {
+        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    }
+
+    .frind-card8 {
+        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    }
+
+    .frind-card9 {
+        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+    }
+
+    .frind-card10 {
+        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
     }
 </style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
+<main class="content">
+    <div class="container friends-container">
+        <article>
+            
+            
+            <div class="row tags-posts friend-all">
+                
+                
+                <div class=" col s12 m6 l4" data-aos="zoom-in-up">
+                    <div class="card frind-card1">
+                        <div class="frind-ship">
+                            <div class="title">
+                                <img src="https://jiweibo.github.io/assets/img/avater.jpg" alt="img">
+                                <div>
+                                    <h1 class="friend-name">WILBER</h1>
+                                    <p>Stay Hungry Stay Foolish</p>
+                                </div>
+                            </div>
+                            <div class="friend-button">
+                                <a href="https://jiweibo.github.io" target="_blank" class="button button-glow button-rounded button-caution">
+                                    前去学习
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class=" col s12 m6 l4" data-aos="zoom-in-up">
+                    <div class="card frind-card2">
+                        <div class="frind-ship">
+                            <div class="title">
+                                <img src="http://www.cxyxiaowu.com/medias/avatar.jpg" alt="img">
+                                <div>
+                                    <h1 class="friend-name">五分钟学算法</h1>
+                                    <p>不忘初心，方得始终</p>
+                                </div>
+                            </div>
+                            <div class="friend-button">
+                                <a href="http://www.cxyxiaowu.com" target="_blank" class="button button-glow button-rounded button-caution">
+                                    前去学习
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class=" col s12 m6 l4" data-aos="zoom-in-up">
+                    <div class="card frind-card3">
+                        <div class="frind-ship">
+                            <div class="title">
+                                <img src="http://zhongdeming.fun/images/avatar.jpeg" alt="img">
+                                <div>
+                                    <h1 class="friend-name">DM Zhong</h1>
+                                    <p>Learn & Live</p>
+                                </div>
+                            </div>
+                            <div class="friend-button">
+                                <a href="http://zhongdeming.fun" target="_blank" class="button button-glow button-rounded button-caution">
+                                    前去学习
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </article>
     </div>
-</div>
-
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
-
-    $('#tag-wordcloud').jQCloud([{"text":"数组","weight":10,"link":"http://yoursite.com/tags/数组/"},{"text":"LeetCode","weight":21,"link":"http://yoursite.com/tags/LeetCode/"},{"text":"数据库","weight":4,"link":"http://yoursite.com/tags/数据库/"},{"text":"哈希表","weight":1,"link":"http://yoursite.com/tags/哈希表/"},{"text":"位运算","weight":2,"link":"http://yoursite.com/tags/位运算/"},{"text":"数学","weight":2,"link":"http://yoursite.com/tags/数学/"},{"text":"回溯算法","weight":1,"link":"http://yoursite.com/tags/回溯算法/"},{"text":"git","weight":1,"link":"http://yoursite.com/tags/git/"},{"text":"全局忽略","weight":1,"link":"http://yoursite.com/tags/全局忽略/"},{"text":"QT5","weight":1,"link":"http://yoursite.com/tags/QT5/"},{"text":"串口通信","weight":1,"link":"http://yoursite.com/tags/串口通信/"}], {
-        autoResize: true
-    });
-</script>
-    
-
 </main>
-
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
