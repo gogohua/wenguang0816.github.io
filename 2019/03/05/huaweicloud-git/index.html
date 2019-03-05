@@ -13,7 +13,7 @@
 
 连接华为仓库
 设置SSH密钥
-从本地获取SSH公钥如果之前设置过github或gitee，那么系统是存在密钥的，密钥路">
+从本地获取SSH公钥（默认已安装git）如果之前设置过github或gitee，那么系统">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -406,7 +406,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        540
+                        547
                     </div>
                     
 
@@ -437,7 +437,7 @@
 </ol>
 <h3 id="连接华为仓库"><a href="#连接华为仓库" class="headerlink" title="连接华为仓库"></a>连接华为仓库</h3><ol>
 <li>设置SSH密钥<br><img src="https://upload-images.jianshu.io/upload_images/14484228-6d86fc7c297486f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置我的SSH密钥"><br><img src="https://upload-images.jianshu.io/upload_images/14484228-9cefaa877952082b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加SSH密钥"></li>
-<li>从本地获取SSH公钥<br>如果之前设置过github或gitee，那么系统是存在密钥的，密钥路径为<code>~/.ssh/id_rsa.pub</code>。<br>如果没有系统不存在密钥，那么在根目录执行以下命令创建密钥:<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"您的email"</span>
+<li>从本地获取SSH公钥（默认已安装git）<br>如果之前设置过github或gitee，那么系统是存在密钥的，密钥路径为<code>~/.ssh/id_rsa.pub</code>。<br>如果没有系统不存在密钥，那么在根目录执行以下命令创建密钥:<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"您的email"</span>
 </code></pre>
 <em>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，建议采用不输入密码方式。</em><br>可以采用两种方法将密钥复制到密钥栏：<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1查看密钥并手动复制</span>
 <span class="token function">cat</span> ~/.ssh/id_rsa.pub
@@ -449,7 +449,9 @@ pbcopy <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 <span class="token comment" spellcheck="true">#Linux</span>
 xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 </code></pre>
-接下来，我们尝试将新建的仓库克隆到本地<h3 id="克隆仓库及常用git指令"><a href="#克隆仓库及常用git指令" class="headerlink" title="克隆仓库及常用git指令"></a>克隆仓库及常用git指令</h3></li>
+接下来，我们尝试将新建的仓库克隆到本地</li>
+</ol>
+<h3 id="克隆仓库及常用git指令"><a href="#克隆仓库及常用git指令" class="headerlink" title="克隆仓库及常用git指令"></a>克隆仓库及常用git指令</h3><ol>
 <li>获取仓库地址<br><img src="https://upload-images.jianshu.io/upload_images/14484228-2a2f547bb1ef3853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仓库地址"></li>
 <li>在终端执行克隆指令<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone 刚复制的地址
 </code></pre>
@@ -662,7 +664,7 @@ xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 
 连接华为仓库
 设置SSH密钥
-从本地获取SSH公钥如果之前设置过github或gitee，那么系统是存在密钥的，密钥路</div>
+从本地获取SSH公钥（默认已安装git）如果之前设置过github或gitee，那么系统</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-05
