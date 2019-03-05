@@ -4,8 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：461.Hamming Distance, 云中的Jason">
-    <meta name="description" content="461. Hamming DistanceThe Hamming distance between two integers is the number of positions at which the corresponding bit">
+    <meta name="keywords" content="华为云代码托管服务及团队协作教程, 云中的Jason">
+    <meta name="description" content="连接华为云仓库注册账号在华为云官网注册账号
+新建仓库
+进入项目管理
+通过左侧菜单栏进入代码托管
+根据自己的需求新建仓库
+
+连接华为仓库
+设置SSH密钥
+从本地获取SSH公钥如果之前设置过github或gitee，那么系统是存在密钥的，密钥路">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：461.Hamming Distance | 云中的Jason</title>
+    <title>华为云代码托管服务及团队协作教程 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-d9cd99ebf0b356a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：461.Hamming Distance
+                        华为云代码托管服务及团队协作教程
                     </div>
                 </div>
             </div>
@@ -355,8 +363,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/git/" target="_blank">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/华为云/" target="_blank">
+                                <span class="chip bg-color">华为云</span>
+                            </a>
+                        
+                            <a href="/tags/代码托管/" target="_blank">
+                                <span class="chip bg-color">代码托管</span>
+                            </a>
+                        
+                            <a href="/tags/团队协作/" target="_blank">
+                                <span class="chip bg-color">团队协作</span>
                             </a>
                         
                     </div>
@@ -367,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                分享
                             </a>
                         
                     </div>
@@ -379,14 +399,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-03-05
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        132
+                        540
                     </div>
                     
 
@@ -409,29 +429,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a><a href="https://leetcode-cn.com/problems/hamming-distance/" target="_blank" rel="noopener">461. Hamming Distance</a></h4><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="noopener">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.<br>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
-<p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.</p>
-<p><strong>Example:</strong></p>
-<pre><code>Input: x = 1, y = 4
-Output: 2
-Explanation:
-1   (0 0 0 1)
-4   (0 1 0 0)
-       ↑   ↑
-The above arrows point to positions where the corresponding bits are different.
-</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>n = x ^ y，两数对应位置若不相同，则n的相应位置置1<br>利用n = n &amp; (n - 1)获取n中1的个数</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">hammingDistance</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> x<span class="token operator">^</span>y<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            count <span class="token operator">++</span><span class="token punctuation">;</span>
-            n <span class="token operator">=</span> n<span class="token operator">&amp;</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <h2 id="连接华为云仓库"><a href="#连接华为云仓库" class="headerlink" title="连接华为云仓库"></a>连接华为云仓库</h2><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>在华为云<a href="https://www.huaweicloud.com/?locale=zh-cn" target="_blank" rel="noopener">官网</a>注册账号</p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><ol>
+<li>进入项目管理<br><img src="https://upload-images.jianshu.io/upload_images/14484228-ff10131724ce0407.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入项目管理"></li>
+<li>通过左侧菜单栏进入代码托管<br><img src="https://upload-images.jianshu.io/upload_images/14484228-bb944beaff06d6df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代码托管"></li>
+<li>根据自己的需求新建仓库<br><img src="https://upload-images.jianshu.io/upload_images/14484228-13625af197158062.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建仓库"></li>
+</ol>
+<h3 id="连接华为仓库"><a href="#连接华为仓库" class="headerlink" title="连接华为仓库"></a>连接华为仓库</h3><ol>
+<li>设置SSH密钥<br><img src="https://upload-images.jianshu.io/upload_images/14484228-6d86fc7c297486f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置我的SSH密钥"><br><img src="https://upload-images.jianshu.io/upload_images/14484228-9cefaa877952082b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加SSH密钥"></li>
+<li>从本地获取SSH公钥<br>如果之前设置过github或gitee，那么系统是存在密钥的，密钥路径为<code>~/.ssh/id_rsa.pub</code>。<br>如果没有系统不存在密钥，那么在根目录执行以下命令创建密钥:<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"您的email"</span>
 </code></pre>
+<em>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，建议采用不输入密码方式。</em><br>可以采用两种方法将密钥复制到密钥栏：<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1查看密钥并手动复制</span>
+<span class="token function">cat</span> ~/.ssh/id_rsa.pub
+<span class="token comment" spellcheck="true">#2使用命令复制密钥到剪切板</span>
+<span class="token comment" spellcheck="true">#Windows</span>
+clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
+<span class="token comment" spellcheck="true">#Mac</span>
+pbcopy <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
+<span class="token comment" spellcheck="true">#Linux</span>
+xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
+</code></pre>
+接下来，我们尝试将新建的仓库克隆到本地<h3 id="克隆仓库及常用git指令"><a href="#克隆仓库及常用git指令" class="headerlink" title="克隆仓库及常用git指令"></a>克隆仓库及常用git指令</h3></li>
+<li>获取仓库地址<br><img src="https://upload-images.jianshu.io/upload_images/14484228-2a2f547bb1ef3853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仓库地址"></li>
+<li>在终端执行克隆指令<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone 刚复制的地址
+</code></pre>
+就可以将远程仓库克隆到本地了</li>
+<li>常用git指令：<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加文件</span>
+<span class="token function">git</span> add filename
+<span class="token comment" spellcheck="true">#添加所有文件</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token comment" spellcheck="true">#确认提交</span>
+<span class="token function">git</span> commit -m <span class="token string">'修改原因'</span>
+<span class="token comment" spellcheck="true">#push到远程仓库,分支可选</span>
+<span class="token function">git</span> push origin master
+</code></pre>
+想学习更多，请戳廖雪峰大神<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></li>
+</ol>
+<h2 id="团队协作"><a href="#团队协作" class="headerlink" title="团队协作"></a>团队协作</h2><p>这里介绍一下如何团队协作</p>
+<h3 id="添加成员"><a href="#添加成员" class="headerlink" title="添加成员"></a>添加成员</h3><ol>
+<li>进入项目<strong>设置</strong>界面<br><img src="https://upload-images.jianshu.io/upload_images/14484228-3f9c2be21ab371cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置"></li>
+<li>在<strong>成员管理</strong>中添加成员，通过链接邀请<br><img src="https://upload-images.jianshu.io/upload_images/14484228-4286aee7a16d917d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="邀请成员"></li>
+<li>在<strong>待审核</strong>界面通过审核，即可在项目成员中看到所邀请的用户，可以根据角色权限说明来自行决定项目角色。<br><em>PS：个人仓库可以最多五个人协同开发</em></li>
+<li>之后进入对应仓库的<strong>成员</strong>页面，添加成员即可<br><img src="https://upload-images.jianshu.io/upload_images/14484228-4df135ee0783de63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加成员到仓库"><br><em>PS：被邀请成员也要设置好SSH密钥，才能克隆远程仓库</em><br>基本内容就这些了，以后想到再补充！</li>
+</ol>
 
             </div>
             <hr>
@@ -579,7 +619,7 @@ The above arrows point to positions where the corresponding bits are different.
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/461-hamming-distance/" class="b-link-green">LeetCode刷题：461.Hamming Distance</a>
+                    <a href="/2019/03/05/huaweicloud-git/" class="b-link-green">华为云代码托管服务及团队协作教程</a>
                 </p>
             </div>
         </div>
@@ -602,40 +642,61 @@ The above arrows point to positions where the corresponding bits are different.
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/476-number-complement/">
+                <a href="/2019/03/05/huaweicloud-git/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-d9cd99ebf0b356a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="华为云代码托管服务及团队协作教程">
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题：476.Number Complement">
-                        
-                        <span class="card-title">LeetCode刷题：476.Number Complement</span>
+                        <span class="card-title">华为云代码托管服务及团队协作教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bit</div>
+                    <div class="summary">连接华为云仓库注册账号在华为云官网注册账号
+新建仓库
+进入项目管理
+通过左侧菜单栏进入代码托管
+根据自己的需求新建仓库
+
+连接华为仓库
+设置SSH密钥
+从本地获取SSH公钥如果之前设置过github或gitee，那么系统是存在密钥的，密钥路</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/华为云/" target="_blank">
+                        <span class="chip bg-color">华为云</span>
+                    </a>
+                    
+                    <a href="/tags/代码托管/" target="_blank">
+                        <span class="chip bg-color">代码托管</span>
+                    </a>
+                    
+                    <a href="/tags/团队协作/" target="_blank">
+                        <span class="chip bg-color">团队协作</span>
                     </a>
                     
                 </div>
@@ -649,30 +710,33 @@ The above arrows point to positions where the corresponding bits are different.
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/344-reverse-string/">
+                <a href="/2019/02/28/qt-serial-communication/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-06891a8bb97b3885.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="QT5串口通信（Hex格式传输）">
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="LeetCode刷题：344.Reverse String">
-                        
-                        <span class="card-title">LeetCode刷题：344.Reverse String</span>
+                        <span class="card-title">QT5串口通信（Hex格式传输）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">344. Reverse StringWrite a function that takes a string as input and returns the string reversed.
-Example 1:
+                    <div class="summary">参考博客
+博客园-菜头大大：QT串口通信
+CSDN-宗师之路：QT实现串口通信(附源码下载)
+CSDN-xz-c：C++将10进制字符串转为16进制字符串
 
-Input: “he</div>
+本文改进
+在前辈们的代码基础上进行改进，使操作更符合逻辑
+优化代码结构，提高了代码</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
@@ -682,8 +746,12 @@ Input: “he</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/QT5/" target="_blank">
+                        <span class="chip bg-color">QT5</span>
+                    </a>
+                    
+                    <a href="/tags/串口通信/" target="_blank">
+                        <span class="chip bg-color">串口通信</span>
                     </a>
                     
                 </div>
