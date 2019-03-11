@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>MacOS中Python多版本管理与虚拟环境</title>
+      <title>macOS中Python多版本管理与虚拟环境</title>
       <link href="/2019/03/10/pyenv-and-virtualenv/"/>
       <url>/2019/03/10/pyenv-and-virtualenv/</url>
       
@@ -20,7 +20,7 @@
       
         <tags>
             
-            <tag> MacOS </tag>
+            <tag> macOS </tag>
             
             <tag> Python </tag>
             
@@ -137,6 +137,8 @@
             <tag> git </tag>
             
             <tag> 全局忽略 </tag>
+            
+            <tag> macOS </tag>
             
         </tags>
       
