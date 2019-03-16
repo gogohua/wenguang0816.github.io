@@ -324,7 +324,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        322
+                        353
                     </div>
                     
 
@@ -370,13 +370,16 @@
 <li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name .DS_Store -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">git</span> <span class="token function">rm</span> -f --ignore-unmatch
 </code></pre>
 </li>
+<li>如果要删除目录及其子目录下的<code>.DS_Store</code>，执行以下指令<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name <span class="token string">'*.DS_Store'</span> -type f -delete
+</code></pre>
+</li>
 <li>更新项目<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add --all
 <span class="token function">git</span> commit -m <span class="token string">'.DS_Store banished!'</span>
 </code></pre>
 </li>
 </ul>
 <ol start="4">
-<li>当然也可以在终端通过修改系统设置来禁止生成<code>.DS_Store</code>（<em>不推荐此做法</em>）。</li>
+<li>当然也可以在终端通过修改系统设置来禁止生成<code>.DS_Store</code>（<em>好像不能禁止本地生成</em>）。</li>
 </ol>
 <ul>
 <li>禁止<code>.DS_Store</code>生成：<pre class=" language-bash"><code class="language-bash">defaults <span class="token function">write</span> com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
@@ -672,7 +675,7 @@ Exampl</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">10.1k</span>
+                <span class="white-color">10.2k</span>
             
 
             
