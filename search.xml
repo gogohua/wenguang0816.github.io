@@ -300,7 +300,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 哈希表 </tag>
             
         </tags>
       
@@ -325,7 +325,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 贪心算法 </tag>
             
         </tags>
       
@@ -350,7 +350,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 数学 </tag>
             
         </tags>
       
@@ -375,7 +375,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -401,6 +401,8 @@
         <tags>
             
             <tag> 数组 </tag>
+            
+            <tag> 排序 </tag>
             
         </tags>
       
@@ -475,7 +477,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 二分查找 </tag>
             
         </tags>
       
@@ -525,7 +527,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 数组 </tag>
             
         </tags>
       
@@ -550,7 +552,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -575,7 +577,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 哈希表 </tag>
             
         </tags>
       
@@ -600,7 +602,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -625,7 +627,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -649,8 +651,6 @@
       
       
         <tags>
-            
-            <tag> LeetCode </tag>
             
             <tag> 数据库 </tag>
             
@@ -677,8 +677,6 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据库 </tag>
             
         </tags>
@@ -703,8 +701,6 @@
       
       
         <tags>
-            
-            <tag> LeetCode </tag>
             
             <tag> 数据库 </tag>
             
@@ -781,7 +777,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 位运算 </tag>
             
         </tags>
       
@@ -794,7 +790,7 @@
       <link href="/2019/02/24/461-hamming-distance/"/>
       <url>/2019/02/24/461-hamming-distance/</url>
       
-        <content type="html"><![CDATA[<h4 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a><a href="https://leetcode-cn.com/problems/hamming-distance/" target="_blank" rel="noopener">461. Hamming Distance</a></h4><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="noopener">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.<br>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p><p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.</p><p><strong>Example:</strong></p><pre><code>Input: x = 1, y = 4Output: 2Explanation:1   (0 0 0 1)4   (0 1 0 0)       ↑   ↑The above arrows point to positions where the corresponding bits are different.</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>n = x ^ y，两数对应位置若不相同，则n的相应位置置1<br>利用n = n &amp; (n - 1)获取n中1的个数</p><h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">hammingDistance</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> n <span class="token operator">=</span> x<span class="token operator">^</span>y<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>            count <span class="token operator">++</span><span class="token punctuation">;</span>            n <span class="token operator">=</span> n<span class="token operator">&amp;</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> count<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h4 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a><a href="https://leetcode-cn.com/problems/hamming-distance/" target="_blank" rel="noopener">461. Hamming Distance</a></h4><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="noopener">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.<br>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p><p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.</p><p><strong>Example:</strong></p><pre><code>Input: x = 1, y = 4Output: 2Explanation:1   (0 0 0 1)4   (0 1 0 0)       ↑   ↑The above arrows point to positions where the corresponding bits are different.</code></pre><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>n = x ^ y，两数对应位置若不相同，则n的相应位置置1<br>利用n = n &amp; (n - 1)获取n中1的个数</p><h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">hammingDistance</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> n <span class="token operator">=</span> x <span class="token operator">^</span> y<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>            count <span class="token operator">++</span><span class="token punctuation">;</span>            n <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> count<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
       
       
       <categories>
@@ -806,7 +802,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 位运算 </tag>
             
         </tags>
       
@@ -831,7 +827,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -885,7 +881,9 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 位运算 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
       
@@ -910,7 +908,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 位运算 </tag>
             
         </tags>
       
@@ -960,8 +958,6 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据库 </tag>
             
         </tags>
@@ -987,7 +983,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 位运算 </tag>
             
         </tags>
       
