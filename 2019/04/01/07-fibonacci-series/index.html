@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：476.Number Complement, 云中的Jason">
-    <meta name="description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bit">
+    <meta name="keywords" content="斐波那契数列, 云中的Jason">
+    <meta name="description" content="7. 斐波那契数列题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。
+注：n&amp;lt;=39
+解题思路：
+斐波那契数列：0, 1, 1, 2, 3, 5, 8 ……;
+这个数列从第3">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：476.Number Complement | 云中的Jason</title>
+    <title>斐波那契数列 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-85685db844f2ddfd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：476.Number Complement
+                        斐波那契数列
                     </div>
                 </div>
             </div>
@@ -355,8 +359,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/循环/" target="_blank">
+                                <span class="chip bg-color">循环</span>
+                            </a>
+                        
+                            <a href="/tags/斐波那契/" target="_blank">
+                                <span class="chip bg-color">斐波那契</span>
                             </a>
                         
                     </div>
@@ -367,8 +375,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -379,14 +387,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-04-01
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        202
+                        160
                     </div>
                     
 
@@ -409,34 +417,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="476-Number-Complement"><a href="#476-Number-Complement" class="headerlink" title="476. Number Complement"></a><a href="https://leetcode-cn.com/problems/number-complement/" target="_blank" rel="noopener">476. Number Complement</a></h4><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.</p>
-<p><strong>Note:</strong></p>
-<ol>
-<li>The given integer is guaranteed to fit within the range of a 32-bit signed integer.</li>
-<li>You could assume no leading zero bit in the integer’s binary representation.</li>
-</ol>
-<p><strong>Example 1:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>5</code></p>
-<p><strong>Output:</strong> <code>2</code></p>
-<p><strong>Explanation:</strong> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.</p>
+                <h3 id="7-斐波那契数列"><a href="#7-斐波那契数列" class="headerlink" title="7. 斐波那契数列"></a><a href="https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&amp;tqId=11160&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">7. 斐波那契数列</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。</p>
+<p><strong>注：n&lt;=39</strong></p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><blockquote>
+<p>斐波那契数列：0, 1, 1, 2, 3, 5, 8 ……;</p>
+<p>这个数列从第3项开始，每一项都等于前两项之和。</p>
+<p>利用递推公式：f(n) = f(n - 1) + f(n - 2);(当n &gt;= 2时)</p>
+<p>时间复杂度O(n), 空间复杂度O(1)</p>
 </blockquote>
-<p><strong>Example 2:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>1</code></p>
-<p><strong>Output:</strong> <code>0</code></p>
-<p><strong>Explanation:</strong> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.</p>
-</blockquote>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>题例中<code>5</code>的二进制为<code>101</code>，补数为<code>010</code>,补数可以通过<code>101 ^ 111</code>获得，所以首先获取与num相同二进制位数的<code>111</code>，通过判断<code>num</code>左移1位是否为空可以获得其位数，进而获取<code>mask</code>。</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">findComplement</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> mask <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> tmp <span class="token operator">=</span> num<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>tmp <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> <span class="token function">Fibonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            mask <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>  
+            b <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+            a <span class="token operator">=</span> b <span class="token operator">-</span> a<span class="token punctuation">;</span>
+            <span class="token operator">++</span>i<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> num <span class="token operator">^</span> <span class="token punctuation">(</span>mask<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
@@ -587,7 +587,7 @@
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/476-number-complement/" class="b-link-green">LeetCode刷题：476.Number Complement</a>
+                    <a href="/2019/04/01/07-fibonacci-series/" class="b-link-green">斐波那契数列</a>
                 </p>
             </div>
         </div>
@@ -610,40 +610,49 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/509-fibonacci-number/">
+                <a href="/2019/04/01/07-fibonacci-series/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-85685db844f2ddfd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="斐波那契数列">
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="LeetCode刷题：509.Fibonacci Number">
-                        
-                        <span class="card-title">LeetCode刷题：509.Fibonacci Number</span>
+                        <span class="card-title">斐波那契数列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">509. Fibonacci NumberThe Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such t</div>
+                    <div class="summary">7. 斐波那契数列题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。
+注：n&lt;=39
+解题思路：
+斐波那契数列：0, 1, 1, 2, 3, 5, 8 ……;
+这个数列从第3</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/循环/" target="_blank">
+                        <span class="chip bg-color">循环</span>
+                    </a>
+                    
+                    <a href="/tags/斐波那契/" target="_blank">
+                        <span class="chip bg-color">斐波那契</span>
                     </a>
                     
                 </div>
@@ -657,27 +666,28 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/461-hamming-distance/">
+                <a href="/2019/04/01/01-lookup-in-a-two-dimensional-array/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-487989f30ef13848.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="二维数组中的查找">
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="LeetCode刷题：461.Hamming Distance">
-                        
-                        <span class="card-title">LeetCode刷题：461.Hamming Distance</span>
+                        <span class="card-title">二维数组中的查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">461. Hamming DistanceThe Hamming distance between two integers is the number of positions at which the corresponding bit</div>
+                    <div class="summary">1. 二维数组中的查找题目描述在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+解题思路：
+思路</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
@@ -687,8 +697,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/查找/" target="_blank">
+                        <span class="chip bg-color">查找</span>
+                    </a>
+                    
+                    <a href="/tags/数组/" target="_blank">
+                        <span class="chip bg-color">数组</span>
                     </a>
                     
                 </div>

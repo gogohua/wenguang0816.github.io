@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>斐波那契数列</title>
+      <link href="/2019/04/01/07-fibonacci-series/"/>
+      <url>/2019/04/01/07-fibonacci-series/</url>
+      
+        <content type="html"><![CDATA[<h3 id="7-斐波那契数列"><a href="#7-斐波那契数列" class="headerlink" title="7. 斐波那契数列"></a><a href="https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&amp;tqId=11160&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">7. 斐波那契数列</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。</p><p><strong>注：n&lt;=39</strong></p><h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><blockquote><p>斐波那契数列：0, 1, 1, 2, 3, 5, 8 ……;</p><p>这个数列从第3项开始，每一项都等于前两项之和。</p><p>利用递推公式：f(n) = f(n - 1) + f(n - 2);(当n &gt;= 2时)</p><p>时间复杂度O(n), 空间复杂度O(1)</p></blockquote><h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">Fibonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">)</span>        <span class="token punctuation">{</span>            b <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>            a <span class="token operator">=</span> b <span class="token operator">-</span> a<span class="token punctuation">;</span>            <span class="token operator">++</span>i<span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> a<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指 offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 循环 </tag>
+            
+            <tag> 斐波那契 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二维数组中的查找</title>
       <link href="/2019/04/01/01-lookup-in-a-two-dimensional-array/"/>
       <url>/2019/04/01/01-lookup-in-a-two-dimensional-array/</url>
@@ -21,6 +48,8 @@
         <tags>
             
             <tag> 查找 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
