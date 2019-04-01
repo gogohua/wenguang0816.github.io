@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>git分支(branch)和标签(tag)操作</title>
+      <link href="/2019/04/01/git-tag/"/>
+      <url>/2019/04/01/git-tag/</url>
+      
+        <content type="html"><![CDATA[<h2 id="分支相关操作"><a href="#分支相关操作" class="headerlink" title="分支相关操作"></a>分支相关操作</h2><ol><li>查看分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch</code></pre></li><li>创建分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li><li>切换分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li><li>创建+切换分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li><li>合并某分支到当前分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> merge <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li><li>删除本地分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -d <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li><li>删除远程分支<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -f -d origin/<span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token function">git</span> branch origin :<span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre></li></ol><h2 id="标签相关操作"><a href="#标签相关操作" class="headerlink" title="标签相关操作"></a>标签相关操作</h2><ol><li>新建标签<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> tag <span class="token operator">&lt;</span>tagname<span class="token operator">></span></code></pre></li><li>新建带有信息的标签<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> tag -a <span class="token operator">&lt;</span>tagname<span class="token operator">></span> -m <span class="token string">'label'</span></code></pre></li><li>查看所有标签<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> tag</code></pre></li><li>删除本地标签<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> tag -d <span class="token operator">&lt;</span>tagname<span class="token operator">></span></code></pre></li><li>删除远程标签<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin :refs/tags/<span class="token operator">&lt;</span>tagname<span class="token operator">></span></code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> branch &amp; tag </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>（转载）漫画：如何将一个链表“逆序”？</title>
       <link href="/2019/03/20/reverse-linked-list/"/>
       <url>/2019/03/20/reverse-linked-list/</url>
