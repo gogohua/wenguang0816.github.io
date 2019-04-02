@@ -4,18 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：231.Power of Two, 云中的Jason">
-    <meta name="description" content="231. Power of TwoExample 1:
-
-Input: 1
-Output: true
-Explanation: 20 = 1
-
-Example 2:
-
-Input: 16
-Output: true
-Explanation: ">
+    <meta name="keywords" content="反转链表, 云中的Jason">
+    <meta name="description" content="15. 反转链表题目描述输入一个链表，反转链表后，输出新链表的表头。
+解题思路：通过3个指针遍历一遍链表，实现链表反转，详细过程参见（转载）漫画：如何将一个链表“逆序”？
+解答：/*
+struct ListNode {
+    int va">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@ Explanation: ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：231.Power of Two | 云中的Jason</title>
+    <title>反转链表 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -267,13 +261,13 @@ Explanation: ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-8b99b537751faec0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：231.Power of Two
+                        反转链表
                     </div>
                 </div>
             </div>
@@ -365,12 +359,8 @@ Explanation: ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/位运算/" target="_blank">
-                                <span class="chip bg-color">位运算</span>
-                            </a>
-                        
-                            <a href="/tags/数学/" target="_blank">
-                                <span class="chip bg-color">数学</span>
+                            <a href="/tags/链表/" target="_blank">
+                                <span class="chip bg-color">链表</span>
                             </a>
                         
                     </div>
@@ -381,8 +371,8 @@ Explanation: ">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -393,14 +383,14 @@ Explanation: ">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-04-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        159
+                        130
                     </div>
                     
 
@@ -423,28 +413,34 @@ Explanation: ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="231-Power-of-Two"><a href="#231-Power-of-Two" class="headerlink" title="231. Power of Two"></a><a href="https://leetcode-cn.com/problems/power-of-two/" target="_blank" rel="noopener">231. Power of Two</a></h4><p><strong>Example 1:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>1</code></p>
-<p><strong>Output:</strong> <code>true</code></p>
-<p><strong>Explanation:</strong> 2<sup>0</sup> = 1</p>
-</blockquote>
-<p><strong>Example 2:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>16</code></p>
-<p><strong>Output:</strong> <code>true</code></p>
-<p><strong>Explanation:</strong> 2<sup>4</sup> = 16</p>
-</blockquote>
-<p><strong>Example 3:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>218</code></p>
-<p><strong>Output:</strong> <code>false</code></p>
-</blockquote>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过观察可知，如果一个数字为2的幂，那么这个数字中的二进制数中的最高位必为1，其它都为0，那么灵气减1，最高位变为0，其它位变为1。例如2<sup>3</sup>=8,其二进制形式为1000，那么8 - 1 = 7，7的二进制形式为0111，1000 &amp; 0111 = 0；我们可以通过这个性质来判断该数字是否为2的幂。</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+                <h3 id="15-反转链表"><a href="#15-反转链表" class="headerlink" title="15. 反转链表"></a><a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&amp;tqId=11168&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">15. 反转链表</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，反转链表后，输出新链表的表头。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>通过3个指针遍历一遍链表，实现链表反转，详细过程参见<a href="http://blog.wenguang0816.top/2019/03/20/reverse-linked-list/" target="_blank" rel="noopener">（转载）漫画：如何将一个链表“逆序”？</a></p>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">bool</span> <span class="token function">isPowerOfTwo</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ListNode<span class="token operator">*</span> <span class="token function">ReverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pHead <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>p1 <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>p2 <span class="token operator">=</span> pHead<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            p3 <span class="token operator">=</span> p2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            p2<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+            p1 <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+            p2 <span class="token operator">=</span> p3<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        pHead <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
@@ -595,7 +591,7 @@ Explanation: ">
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/231-power-of-two/" class="b-link-green">LeetCode刷题：231.Power of Two</a>
+                    <a href="/2019/04/02/15-reverse-linkedlist/" class="b-link-green">反转链表</a>
                 </p>
             </div>
         </div>
@@ -618,48 +614,45 @@ Explanation: ">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/268-missing-number/">
+                <a href="/2019/04/02/15-reverse-linkedlist/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-8b99b537751faec0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="反转链表">
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeetCode刷题：268.Missing Number">
-                        
-                        <span class="card-title">LeetCode刷题：268.Missing Number</span>
+                        <span class="card-title">反转链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">268. Missing NumberGiven an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing</div>
+                    <div class="summary">15. 反转链表题目描述输入一个链表，反转链表后，输出新链表的表头。
+解题思路：通过3个指针遍历一遍链表，实现链表反转，详细过程参见（转载）漫画：如何将一个链表“逆序”？
+解答：/*
+struct ListNode {
+    int va</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
-                    </a>
-                    
-                    <a href="/tags/位运算/" target="_blank">
-                        <span class="chip bg-color">位运算</span>
-                    </a>
-                    
-                    <a href="/tags/数学/" target="_blank">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/链表/" target="_blank">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
                 </div>
@@ -673,27 +666,29 @@ Explanation: ">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/201-bitwise-and-of-numbers-range/">
+                <a href="/2019/04/02/03-print-linkedlist-from-tail-to-head/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-9d6dab50e206e76a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="从尾到头打印链表">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="LeetCode刷题：201.Bitwise AND of Numbers Range">
-                        
-                        <span class="card-title">LeetCode刷题：201.Bitwise AND of Numbers Range</span>
+                        <span class="card-title">从尾到头打印链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">201. Bitwise AND of Numbers RangeGiven a range [m, n] where 0 &lt;= m &lt;= n &lt;= 2147483647, return the bitwise AND o</div>
+                    <div class="summary">3. 从尾到头打印链表题目描述输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+解题思路：
+思路1: 利用栈先进后出的性质，将链表中的数据push到栈中，然后pop到vector中
+思路2: 利用头插法，遍历链表，将链表元素</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
@@ -703,8 +698,16 @@ Explanation: ">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/位运算/" target="_blank">
-                        <span class="chip bg-color">位运算</span>
+                    <a href="/tags/链表/" target="_blank">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                    <a href="/tags/栈/" target="_blank">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
+                    <a href="/tags/头插法/" target="_blank">
+                        <span class="chip bg-color">头插法</span>
                     </a>
                     
                 </div>

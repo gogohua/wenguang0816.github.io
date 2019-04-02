@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>反转链表</title>
+      <link href="/2019/04/02/15-reverse-linkedlist/"/>
+      <url>/2019/04/02/15-reverse-linkedlist/</url>
+      
+        <content type="html"><![CDATA[<h3 id="15-反转链表"><a href="#15-反转链表" class="headerlink" title="15. 反转链表"></a><a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&amp;tqId=11168&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">15. 反转链表</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，反转链表后，输出新链表的表头。</p><h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>通过3个指针遍历一遍链表，实现链表反转，详细过程参见<a href="http://blog.wenguang0816.top/2019/03/20/reverse-linked-list/" target="_blank" rel="noopener">（转载）漫画：如何将一个链表“逆序”？</a></p><h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*struct ListNode {    int val;    struct ListNode *next;    ListNode(int x) :            val(x), next(NULL) {    }};*/</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    ListNode<span class="token operator">*</span> <span class="token function">ReverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>pHead <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>            <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>        ListNode <span class="token operator">*</span>p1 <span class="token operator">=</span> pHead<span class="token punctuation">;</span>        ListNode <span class="token operator">*</span>p2 <span class="token operator">=</span> pHead<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>        ListNode <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            p3 <span class="token operator">=</span> p2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>            p2<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>            p1 <span class="token operator">=</span> p2<span class="token punctuation">;</span>            p2 <span class="token operator">=</span> p3<span class="token punctuation">;</span>        <span class="token punctuation">}</span>        pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>        pHead <span class="token operator">=</span> p1<span class="token punctuation">;</span>        <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指 offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从尾到头打印链表</title>
       <link href="/2019/04/02/03-print-linkedlist-from-tail-to-head/"/>
       <url>/2019/04/02/03-print-linkedlist-from-tail-to-head/</url>
