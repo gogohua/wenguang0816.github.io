@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>从尾到头打印链表</title>
+      <link href="/2019/04/02/03-print-linkedlist-from-tail-to-head/"/>
+      <url>/2019/04/02/03-print-linkedlist-from-tail-to-head/</url>
+      
+        <content type="html"><![CDATA[<h3 id="3-从尾到头打印链表"><a href="#3-从尾到头打印链表" class="headerlink" title="3. 从尾到头打印链表"></a><a href="https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&amp;tqId=11156&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">3. 从尾到头打印链表</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。</p><h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul><li>思路1: 利用栈先进后出的性质，将链表中的数据<code>push</code>到栈中，然后<code>pop</code>到<code>vector</code>中</li><li>思路2: 利用头插法，遍历链表，将链表元素插入到<code>vector</code>头部(缺点：需要多次分配空间)</li></ul><h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/* *  struct ListNode { *        int val; *        struct ListNode *next; *        ListNode(int x) : *              val(x), next(NULL) { *        } *  }; */</span><span class="token comment" spellcheck="true">// 解法1:</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">printListFromTailToHead</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>        stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nodes<span class="token punctuation">;</span>        ListNode<span class="token operator">*</span> pNode <span class="token operator">=</span> head<span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            nodes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>pNode <span class="token operator">-</span><span class="token operator">></span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>            pNode <span class="token operator">=</span> pNode <span class="token operator">-</span><span class="token operator">></span> next<span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>nodes<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>nodes<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            nodes<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//解法2:</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">printListFromTailToHead</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>        ListNode<span class="token operator">*</span> pNode <span class="token operator">=</span> head<span class="token punctuation">;</span>        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            ans<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>ans<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pNode <span class="token operator">-</span><span class="token operator">></span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>            pNode <span class="token operator">=</span> pNode <span class="token operator">-</span><span class="token operator">></span> next<span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指 offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 头插法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>求1+2+3+...+n</title>
+      <link href="/2019/04/02/47-sum/"/>
+      <url>/2019/04/02/47-sum/</url>
+      
+        <content type="html"><![CDATA[<h3 id="47-求1-2-3-…-n"><a href="#47-求1-2-3-…-n" class="headerlink" title="47. 求1+2+3+…+n"></a><a href="https://www.nowcoder.com/practice/7a0da8fc483247ff8800059e12d7caf1?tpId=13&amp;tqId=11200&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">47. 求1+2+3+…+n</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。</p><h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul><li>思路1: 首先想到的是递归，但是递归要有返回条件，题目中明确说明不能使用if判断(用了if也可以AC)，所以采用逻辑与的短路特性，作为递归的返回条件</li><li>思路2: 借助求和公式，<code>sum = n * (n + 1) / 2</code>，题目中规定不允许使用乘除法，可以借助求<code>n * (n + 1)</code>的二维数组的大小以及右移运算实现，有违规嫌疑</li></ul><h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 解法1:</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">Sum_Solution</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> ans <span class="token operator">=</span> n<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 逻辑与有短路特点，当前面为假时，则后面不计算，当ans = 0时，递归返回</span>        ans <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">Sum_Solution</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 解法2:</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">Sum_Solution</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">bool</span> a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指 offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 递归 </tag>
+            
+            <tag> 逻辑与 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>斐波那契数列</title>
       <link href="/2019/04/01/07-fibonacci-series/"/>
       <url>/2019/04/01/07-fibonacci-series/</url>
@@ -128,9 +184,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> 链表 </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 转载 </tag>
             
