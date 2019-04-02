@@ -419,14 +419,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        549
+                        732
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -486,6 +486,9 @@
 </ol>
 <p><img src="https://upload-images.jianshu.io/upload_images/14484228-e97bbf305a186106.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14484228-64d00c433eed1d41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<blockquote>
+<p>Java:</p>
+</blockquote>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> Node head<span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">reverseLinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -544,6 +547,77 @@
     <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
         temp <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>C++</p>
+</blockquote>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Node</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    Node<span class="token operator">*</span> next<span class="token punctuation">;</span>
+    <span class="token function">Node</span><span class="token punctuation">(</span><span class="token keyword">int</span> da<span class="token punctuation">,</span> Node<span class="token operator">*</span> p <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">=</span>  da<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Node<span class="token operator">*</span> <span class="token function">reverseLinkedList</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>head<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> head<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>p1 <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>p2 <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        p3 <span class="token operator">=</span> p2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        p2<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+        p1 <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+        p2 <span class="token operator">=</span> p3<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    head<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    head <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 初始化链表</span>
+    Node <span class="token operator">*</span>head<span class="token punctuation">;</span>
+    head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    head<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>tmp <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    tmp<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tmp <span class="token operator">=</span> tmp<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    tmp<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tmp <span class="token operator">=</span> tmp<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    tmp<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"逆序前"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 逆序前输出链表</span>
+    tmp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>tmp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> tmp<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        tmp <span class="token operator">=</span> tmp<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 逆序链表</span>
+    head <span class="token operator">=</span> <span class="token function">reverseLinkedList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"逆序后"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 逆序后输出链表</span>
+    tmp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>tmp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> tmp<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        tmp <span class="token operator">=</span> tmp<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -905,7 +979,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.1k</span>
+                <span class="white-color">12.2k</span>
             
 
             
