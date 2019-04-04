@@ -387,7 +387,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        291
+                        340
                     </div>
                     
 
@@ -413,8 +413,78 @@
                 <h3 id="51-构建乘积数组"><a href="#51-构建乘积数组" class="headerlink" title="51. 构建乘积数组"></a><a href="https://www.nowcoder.com/practice/94a4d381a68b47b7a8bed86f2975db46?tpId=13&amp;tqId=11204&amp;tPage=2&amp;rp=2&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">51. 构建乘积数组</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个数组<code>A[0,1,...,n-1]</code>,请构建一个数组<code>B[0,1,...,n-1]</code>,其中B中的元素<code>B[i]=A[0]*A[1]*...*A[i-1]*A[i+1]*...*A[n-1]</code>。不能使用除法。</p>
 <h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul>
 <li>思路1: 遍历数组，时间复杂度O(n)</li>
-<li>思路2:<br>  <img src="https://upload-images.jianshu.io/upload_images/14484228-9c24eabfb132c9df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>  通过观察，B<sub>i</sub>的值可以看作表格中每一行的乘积，下三角连乘易求得，上三角，从下向上也是连乘，所以我们可以先计算下三角中的连乘，再算上三角的连乘，将B<sub>i</sub>两部分相乘即可。</li>
+<li>思路2: </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>B<sub>i</sub></th>
+<th>A<sub>0</sub></th>
+<th>A<sub>1</sub></th>
+<th>A<sub>2</sub></th>
+<th>…</th>
+<th>A<sub>n-2</sub></th>
+<th>A<sub>n-1</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B<sub>0</sub></td>
+<td><strong>1</strong></td>
+<td>A<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>…</td>
+<td>A<sub>n-2</sub></td>
+<td>A<sub>n-1</sub></td>
+</tr>
+<tr>
+<td>B<sub>1</sub></td>
+<td>A<sub>0</sub></td>
+<td><strong>1</strong></td>
+<td>A<sub>2</sub></td>
+<td>…</td>
+<td>A<sub>n-2</sub></td>
+<td>A<sub>n-1</sub></td>
+</tr>
+<tr>
+<td>B<sub>2</sub></td>
+<td>A<sub>0</sub></td>
+<td>A<sub>1</sub></td>
+<td><strong>1</strong></td>
+<td>…</td>
+<td>A<sub>n-2</sub></td>
+<td>A<sub>n-1</sub></td>
+</tr>
+<tr>
+<td>B<sub>0</sub></td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>B<sub>n-2</sub></td>
+<td>A<sub>0</sub></td>
+<td>A<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>…</td>
+<td><strong>1</strong></td>
+<td>A<sub>n-1</sub></td>
+</tr>
+<tr>
+<td>B<sub>n-1</sub></td>
+<td>A<sub>0</sub></td>
+<td>A<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>…</td>
+<td>A<sub>n-2</sub></td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>通过观察，B<sub>i</sub>的值可以看作表格中每一行的乘积，下三角连乘易求得，上三角，从下向上也是连乘，所以我们可以先计算下三角中的连乘，再算上三角的连乘，将B<sub>i</sub>两部分相乘即可。</p>
 <h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 解法1:</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -789,7 +859,7 @@ f(n)</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14k</span>
+                <span class="white-color">14.1k</span>
             
 
             
