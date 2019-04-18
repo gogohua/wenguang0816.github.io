@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：595.Big Countries, 云中的Jason">
-    <meta name="description" content="595. Big CountriesSQL架构
-Create table If Not Exists World (name varchar(255), continent varchar(255), area int, populatio">
+    <meta name="keywords" content="用两个栈实现队列, 云中的Jason">
+    <meta name="description" content="5. 用两个栈实现队列题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+解题思路：入队：将元素进栈A出队：判断栈B是否为空，如果为空，则将栈A中所有元素依次出栈，并压栈进入栈B，之后栈B出栈；如果">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode刷题：595.Big Countries | 云中的Jason</title>
+    <title>用两个栈实现队列 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-efcde61513427cec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：595.Big Countries
+                        用两个栈实现队列
                     </div>
                 </div>
             </div>
@@ -356,8 +356,12 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数据库/" target="_blank">
-                                <span class="chip bg-color">数据库</span>
+                            <a href="/tags/栈/" target="_blank">
+                                <span class="chip bg-color">栈</span>
+                            </a>
+                        
+                            <a href="/tags/队列/" target="_blank">
+                                <span class="chip bg-color">队列</span>
                             </a>
                         
                     </div>
@@ -368,8 +372,8 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -380,14 +384,14 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-04-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        215
+                        172
                     </div>
                     
 
@@ -410,88 +414,39 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="595-Big-Countries"><a href="#595-Big-Countries" class="headerlink" title="595. Big Countries"></a><a href="https://leetcode-cn.com/problems/big-countries/" target="_blank" rel="noopener">595. Big Countries</a></h4><p>SQL架构</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Create</span> <span class="token keyword">table</span> <span class="token keyword">If</span> <span class="token operator">Not</span> <span class="token keyword">Exists</span> World <span class="token punctuation">(</span>name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> continent <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> area <span class="token keyword">int</span><span class="token punctuation">,</span> population <span class="token keyword">int</span><span class="token punctuation">,</span> gdp <span class="token keyword">int</span><span class="token punctuation">)</span>
-<span class="token keyword">Truncate</span> <span class="token keyword">table</span> World
-<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Afghanistan'</span><span class="token punctuation">,</span> <span class="token string">'Asia'</span><span class="token punctuation">,</span> <span class="token string">'652230'</span><span class="token punctuation">,</span> <span class="token string">'25500100'</span><span class="token punctuation">,</span> <span class="token string">'20343000000'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Albania'</span><span class="token punctuation">,</span> <span class="token string">'Europe'</span><span class="token punctuation">,</span> <span class="token string">'28748'</span><span class="token punctuation">,</span> <span class="token string">'2831741'</span><span class="token punctuation">,</span> <span class="token string">'12960000000'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Algeria'</span><span class="token punctuation">,</span> <span class="token string">'Africa'</span><span class="token punctuation">,</span> <span class="token string">'2381741'</span><span class="token punctuation">,</span> <span class="token string">'37100000'</span><span class="token punctuation">,</span> <span class="token string">'188681000000'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Andorra'</span><span class="token punctuation">,</span> <span class="token string">'Europe'</span><span class="token punctuation">,</span> <span class="token string">'468'</span><span class="token punctuation">,</span> <span class="token string">'78115'</span><span class="token punctuation">,</span> <span class="token string">'3712000000'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> World <span class="token punctuation">(</span>name<span class="token punctuation">,</span> continent<span class="token punctuation">,</span> area<span class="token punctuation">,</span> population<span class="token punctuation">,</span> gdp<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'Angola'</span><span class="token punctuation">,</span> <span class="token string">'Africa'</span><span class="token punctuation">,</span> <span class="token string">'1246700'</span><span class="token punctuation">,</span> <span class="token string">'20609294'</span><span class="token punctuation">,</span> <span class="token string">'100990000000'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>There is a table <code>World</code></p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>continent</th>
-<th>area</th>
-<th>population</th>
-<th>gdp</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Afghanistan</td>
-<td>Asia</td>
-<td>652230</td>
-<td>25500100</td>
-<td>20343000</td>
-</tr>
-<tr>
-<td>Albania</td>
-<td>Europe</td>
-<td>28748</td>
-<td>2831741</td>
-<td>12960000</td>
-</tr>
-<tr>
-<td>Algeria</td>
-<td>Africa</td>
-<td>2381741</td>
-<td>37100000</td>
-<td>188681000</td>
-</tr>
-<tr>
-<td>Andorra</td>
-<td>Europe</td>
-<td>468</td>
-<td>78115</td>
-<td>3712000</td>
-</tr>
-<tr>
-<td>Angola</td>
-<td>Africa</td>
-<td>1246700</td>
-<td>20609294</td>
-<td>100990000</td>
-</tr>
-</tbody>
-</table>
-<p>A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.<br>Write a SQL solution to output big countries’ name, population and area.<br>For example, according to the above table, we should output:</p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>population</th>
-<th>area</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Afghanistan</td>
-<td>25500100</td>
-<td>652230</td>
-</tr>
-<tr>
-<td>Algeria</td>
-<td>37100000</td>
-<td>2381741</td>
-</tr>
-</tbody>
-</table>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>利用人口和面积进行筛选</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> name<span class="token punctuation">,</span> population<span class="token punctuation">,</span> area <span class="token keyword">from</span> World <span class="token keyword">where</span> area <span class="token operator">></span> <span class="token number">3000000</span> <span class="token operator">or</span> population <span class="token operator">></span> <span class="token number">25000000</span><span class="token punctuation">;</span>
+                <h3 id="5-用两个栈实现队列"><a href="#5-用两个栈实现队列" class="headerlink" title="5. 用两个栈实现队列"></a><a href="https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&amp;tqId=11158&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">5. 用两个栈实现队列</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>入队：将元素进栈A<br>出队：判断栈B是否为空，如果为空，则将栈A中所有元素依次出栈，并压栈进入栈B，之后栈B出栈；如果不为空，栈B直接出栈。</p>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        stack1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>stack2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> stack1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 队列为空，异常处理</span>
+            <span class="token keyword">throw</span> <span class="token string">"The queue is empty!"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>stack2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stack1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">int</span> tmp <span class="token operator">=</span> stack1<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                stack1<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                stack2<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> top <span class="token operator">=</span> stack2<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        stack2<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> top<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> stack1<span class="token punctuation">;</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> stack2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
             </div>
@@ -640,7 +595,7 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/595-big-countries/" class="b-link-green">LeetCode刷题：595.Big Countries</a>
+                    <a href="/2019/04/18/05-queue-with-two-stacks/" class="b-link-green">用两个栈实现队列</a>
                 </p>
             </div>
         </div>
@@ -663,41 +618,46 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/620-not-boring-movies/">
+                <a href="/2019/04/18/05-queue-with-two-stacks/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-efcde61513427cec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="用两个栈实现队列">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="LeetCode刷题：620.Not Boring Movies">
-                        
-                        <span class="card-title">LeetCode刷题：620.Not Boring Movies</span>
+                        <span class="card-title">用两个栈实现队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">620. Not Boring MoviesSQL架构
-Create table If Not Exists cinema (id int, movie varchar(255), description varchar(255), rat</div>
+                    <div class="summary">5. 用两个栈实现队列题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+解题思路：入队：将元素进栈A出队：判断栈B是否为空，如果为空，则将栈A中所有元素依次出栈，并压栈进入栈B，之后栈B出栈；如果</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/栈/" target="_blank">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
+                    <a href="/tags/队列/" target="_blank">
+                        <span class="chip bg-color">队列</span>
                     </a>
                     
                 </div>
@@ -711,27 +671,31 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/561-array-partition-i/">
+                <a href="/2019/04/17/18-mirror/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-01341b258b1fd7de.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="二叉树的镜像">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="LeetCode刷题：561.Array Partition I">
-                        
-                        <span class="card-title">LeetCode刷题：561.Array Partition I</span>
+                        <span class="card-title">二叉树的镜像</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">561. Array Partition IGiven an array of 2n integers, your task is to group these integers into n pairs of integer, say (</div>
+                    <div class="summary">18. 二叉树的镜像题目描述操作给定的二叉树，将其变换为源二叉树的镜像。
+输入描述二叉树的镜像定义：源二叉树 
+            8
+           /  \
+          6   10
+         / \  / \</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
@@ -741,8 +705,16 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/栈/" target="_blank">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
+                    <a href="/tags/递归/" target="_blank">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                    <a href="/tags/二叉树/" target="_blank">
+                        <span class="chip bg-color">二叉树</span>
                     </a>
                     
                 </div>
