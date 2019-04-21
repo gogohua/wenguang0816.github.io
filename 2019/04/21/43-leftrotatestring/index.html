@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：807.Max Increase to Keep City Skyline, 云中的Jason">
-    <meta name="description" content="807. Max Increase to Keep City SkylineIn a 2 dimensional array grid, each value grid[i][j] represents the height of a bu">
+    <meta name="keywords" content="左旋转字符串, 云中的Jason">
+    <meta name="description" content="43. 左旋转字符串题目描述汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google-site-verification" content="VUFL73EWMzmpuGK9EUgVofeIBATc0gshz-vL0O7pLG8">
-    <title>LeetCode刷题：807.Max Increase to Keep City Skyline | 云中的Jason</title>
+    <title>左旋转字符串 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-33cd3e32d0e5e2a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：807.Max Increase to Keep City Skyline
+                        左旋转字符串
                     </div>
                 </div>
             </div>
@@ -360,8 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数组/" target="_blank">
-                                <span class="chip bg-color">数组</span>
+                            <a href="/tags/字符串/" target="_blank">
+                                <span class="chip bg-color">字符串</span>
                             </a>
                         
                     </div>
@@ -372,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-04-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        400
+                        302
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -414,54 +414,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="807-Max-Increase-to-Keep-City-Skyline"><a href="#807-Max-Increase-to-Keep-City-Skyline" class="headerlink" title="807. Max Increase to Keep City Skyline"></a><a href="https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/" target="_blank" rel="noopener">807. Max Increase to Keep City Skyline</a></h4><p>In a 2 dimensional array <code>grid</code>, each value <code>grid[i][j]</code> represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well.<br>At the end, the “skyline” when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid. A city’s skyline is the outer contour of the rectangles formed by all the buildings when viewed from a distance. See the following example.<br>What is the maximum total sum that the height of the buildings can be increased?</p>
-<p><strong>Example:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> <code>grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]</code></p>
-<p><strong>Output:</strong> <code>35</code></p>
-<p><strong>Explanation:</strong> </p>
-<pre><code>The grid is:
-[ [3, 0, 8, 4], 
-  [2, 4, 5, 7],
-  [9, 2, 6, 3],
-  [0, 3, 1, 0] ]
-The skyline viewed from top or bottom is: [9, 4, 8, 7]
-The skyline viewed from left or right is: [8, 7, 9, 3]
-The grid after increasing the height of buildings without affecting skylines is:
-gridNew = [ [8, 4, 8, 7],
-            [7, 4, 7, 7],
-            [9, 4, 8, 7],
-            [3, 3, 3, 3] ]
-</code></pre><p><strong>Notes:</strong></p>
-<ul>
-<li><code>1 &lt; grid.length = grid[0].length &lt;= 50</code>.</li>
-<li>All heights <code>grid[i][j]</code> are in the range <code>[0, 100]</code>.</li>
-<li>All buildings in <code>grid[i][j]</code> occupy the entire grid cell: that is, they are a <code>1 x 1 x grid[i][j]</code> rectangular prism.</li>
+                <h3 id="43-左旋转字符串"><a href="#43-左旋转字符串" class="headerlink" title="43. 左旋转字符串"></a><a href="https://www.nowcoder.com/practice/12d959b108cb42b1ab72cef4d36af5ec?tpId=13&amp;tqId=11196&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">43. 左旋转字符串</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul>
+<li>思路1: 首先确定左移之后第一个字符在原字符串中的位置<code>begin</code>，然后从<code>begin</code>向后遍历完原字符串，然后从0开始遍历到<code>begin</code>，将两部分拼接即可</li>
+<li>思路2: <code>begin</code>为分界线，将两侧字符串分别反转，然后再将整个字符串反转</li>
 </ul>
-</blockquote>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
-<li>遍历<code>grid</code>获取skyline数值存入到<code>col</code>和<code>row</code>中；</li>
-<li>遍历<code>grid</code>，利用<code>col</code>和<code>row</code>中最小的skyline值来计算最大增量，最后得出结果；<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 解法1:</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> <span class="token function">maxIncreaseKeepingSkyline</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> grid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">int</span> len <span class="token operator">=</span> grid<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">col</span><span class="token punctuation">(</span>len<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">row</span><span class="token punctuation">(</span>len<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          row<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          col<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span>
-          result <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> col<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    string <span class="token function">LeftRotateString</span><span class="token punctuation">(</span>string str<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>len <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        string res <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> begin <span class="token operator">=</span> n <span class="token operator">%</span> len<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> begin<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+            res <span class="token operator">+</span><span class="token operator">=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> begin<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+            res <span class="token operator">+</span><span class="token operator">=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 解法2:</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">LeftRotateString</span><span class="token punctuation">(</span>string str<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>len <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> begin <span class="token operator">=</span> n <span class="token operator">%</span> len<span class="token punctuation">;</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> begin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> begin<span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-</li>
-</ul>
 
             </div>
             <hr>
@@ -609,7 +597,7 @@ gridNew = [ [8, 4, 8, 7],
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/807-max-increase-to-keep-city-skyline/" class="b-link-green">LeetCode刷题：807.Max Increase to Keep City Skyline</a>
+                    <a href="/2019/04/21/43-leftrotatestring/" class="b-link-green">左旋转字符串</a>
                 </p>
             </div>
         </div>
@@ -632,40 +620,41 @@ gridNew = [ [8, 4, 8, 7],
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/24/832-flipping-an-image/">
+                <a href="/2019/04/21/43-leftrotatestring/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-33cd3e32d0e5e2a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="左旋转字符串">
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode刷题：832.Flipping an Image">
-                        
-                        <span class="card-title">LeetCode刷题：832.Flipping an Image</span>
+                        <span class="card-title">左旋转字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">832. Flipping an ImageGiven a binary matrix A, we want to flip the image horizontally, then invert it, and return the re</div>
+                    <div class="summary">43. 左旋转字符串题目描述汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/字符串/" target="_blank">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
                 </div>
@@ -679,27 +668,26 @@ gridNew = [ [8, 4, 8, 7],
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/804-unique-morse-code-words/">
+                <a href="/2019/04/21/49-strtoint/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-45e79649ee869a59.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="把字符串转换成整数">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="LeetCode刷题：804.Unique Morse Code Words">
-                        
-                        <span class="card-title">LeetCode刷题：804.Unique Morse Code Words</span>
+                        <span class="card-title">把字符串转换成整数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">804. Unique Morse Code WordsInternational Morse Code defines a standard encoding where each letter is mapped to a series</div>
+                    <div class="summary">49. 把字符串转换成整数题目描述将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
