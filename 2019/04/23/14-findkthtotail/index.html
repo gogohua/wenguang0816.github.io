@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：620.Not Boring Movies, 云中的Jason">
-    <meta name="description" content="620. Not Boring MoviesSQL架构
-Create table If Not Exists cinema (id int, movie varchar(255), description varchar(255), rat">
+    <meta name="keywords" content="链表中倒数第k个节点, 云中的Jason">
+    <meta name="description" content="14. 链表中倒数第k个节点题目描述输入一个链表，输出该链表中倒数第k个结点。
+解题思路：
+定义两个指针，第一个指针从链表头部开始遍历至第k-1个节点，第二个指针保持不懂；
+第二个指针指向链表头部，然后两个指针同时向后遍历，由于两个指针的距">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google-site-verification" content="VUFL73EWMzmpuGK9EUgVofeIBATc0gshz-vL0O7pLG8">
-    <title>LeetCode刷题：620.Not Boring Movies | 云中的Jason</title>
+    <title>链表中倒数第k个节点 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +265,13 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/14484228-37e3dd898451c942.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：620.Not Boring Movies
+                        链表中倒数第k个节点
                     </div>
                 </div>
             </div>
@@ -361,8 +363,12 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数据库/" target="_blank">
-                                <span class="chip bg-color">数据库</span>
+                            <a href="/tags/链表/" target="_blank">
+                                <span class="chip bg-color">链表</span>
+                            </a>
+                        
+                            <a href="/tags/鲁棒性/" target="_blank">
+                                <span class="chip bg-color">鲁棒性</span>
                             </a>
                         
                     </div>
@@ -373,8 +379,8 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -385,14 +391,14 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-04-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        252
+                        237
                     </div>
                     
 
@@ -415,88 +421,48 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="620-Not-Boring-Movies"><a href="#620-Not-Boring-Movies" class="headerlink" title="620. Not Boring Movies"></a><a href="https://leetcode-cn.com/problems/not-boring-movies/" target="_blank" rel="noopener">620. Not Boring Movies</a></h4><p>SQL架构</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Create</span> <span class="token keyword">table</span> <span class="token keyword">If</span> <span class="token operator">Not</span> <span class="token keyword">Exists</span> cinema <span class="token punctuation">(</span>id <span class="token keyword">int</span><span class="token punctuation">,</span> movie <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> description <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rating <span class="token keyword">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">Truncate</span> <span class="token keyword">table</span> cinema
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'War'</span><span class="token punctuation">,</span> <span class="token string">'great 3D'</span><span class="token punctuation">,</span> <span class="token string">'8.9'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'Science'</span><span class="token punctuation">,</span> <span class="token string">'fiction'</span><span class="token punctuation">,</span> <span class="token string">'8.5'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'irish'</span><span class="token punctuation">,</span> <span class="token string">'boring'</span><span class="token punctuation">,</span> <span class="token string">'6.2'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'Ice song'</span><span class="token punctuation">,</span> <span class="token string">'Fantacy'</span><span class="token punctuation">,</span> <span class="token string">'8.6'</span><span class="token punctuation">)</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> cinema <span class="token punctuation">(</span>id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token string">'House card'</span><span class="token punctuation">,</span> <span class="token string">'Interesting'</span><span class="token punctuation">,</span> <span class="token string">'9.1'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>X city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.<br>Please write a SQL query to output movies with an odd numbered ID and a description that is not ‘boring’. Order the result by rating.<br>For example, table <code>cinema</code>:</p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>movie</th>
-<th>description</th>
-<th>rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>War</td>
-<td>great 3D</td>
-<td>8.9</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Science</td>
-<td>fiction</td>
-<td>8.5</td>
-</tr>
-<tr>
-<td>3</td>
-<td>irish</td>
-<td>boring</td>
-<td>6.2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Ice song</td>
-<td>Fantacy</td>
-<td>8.6</td>
-</tr>
-<tr>
-<td>5</td>
-<td>House card</td>
-<td>Interesting</td>
-<td>9.1</td>
-</tr>
-</tbody>
-</table>
-<p>For the example above, the output should be:</p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>movie</th>
-<th>description</th>
-<th>rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5</td>
-<td>House card</td>
-<td>Interesting</td>
-<td>9.1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>War</td>
-<td>great 3D</td>
-<td>8.9</td>
-</tr>
-</tbody>
-</table>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>通过<code>description</code>和<code>id</code>进行筛选，然后通过<code>rating</code>进行倒序排序（<code>DESC</code>）</p>
-<h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> movie<span class="token punctuation">,</span> description<span class="token punctuation">,</span> rating
-<span class="token keyword">FROM</span> cinema
-<span class="token keyword">WHERE</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> description <span class="token operator">!=</span> <span class="token string">'boring'</span>
-<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> rating <span class="token keyword">DESC</span>
+                <h3 id="14-链表中倒数第k个节点"><a href="#14-链表中倒数第k个节点" class="headerlink" title="14. 链表中倒数第k个节点"></a><a href="https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&amp;tqId=11167&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">14. 链表中倒数第k个节点</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，输出该链表中倒数第k个结点。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul>
+<li>定义两个指针，第一个指针从链表头部开始遍历至第<code>k-1</code>个节点，第二个指针保持不懂；</li>
+<li>第二个指针指向链表头部，然后两个指针同时向后遍历，由于两个指针的距离始终保持<code>k-1</code>，所以当第一个指针到达链表的尾节点是，第二个指针正好指向倒数第<code>k</code>个节点</li>
+</ul>
+<p>异常处理：</p>
+<ol>
+<li>输入为空指针</li>
+<li>链表节点数小于k</li>
+<li>k为0</li>
+</ol>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">FindKthToTail</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pListHead<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pListHead <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> pAhead <span class="token operator">=</span> pListHead<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> pBehind <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pAhead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+                pAhead <span class="token operator">=</span> pAhead<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        pBehind <span class="token operator">=</span> pListHead<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>pAhead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            pAhead <span class="token operator">=</span> pAhead<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            pBehind <span class="token operator">=</span> pBehind<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> pBehind<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
             </div>
@@ -645,7 +611,7 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">云中的Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/24/620-not-boring-movies/" class="b-link-green">LeetCode刷题：620.Not Boring Movies</a>
+                    <a href="/2019/04/23/14-findkthtotail/" class="b-link-green">链表中倒数第k个节点</a>
                 </p>
             </div>
         </div>
@@ -670,29 +636,28 @@ Create table If Not Exists cinema (id int, movie varchar(255), description varch
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/24/627-swap-salary/">
+                <a href="/2019/04/23/55-entrynodeofloop/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-7e0e3295e6d65b70.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="链表中环的入口节点">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题：627.Swap Salary">
-                        
-                        <span class="card-title">LeetCode刷题：627.Swap Salary</span>
+                        <span class="card-title">链表中环的入口节点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">627. Swap SalarySQL架构
-create table if not exists salary(id int, name varchar(100), sex char(1), salary int)
-Truncate tab</div>
+                    <div class="summary">55. 链表中环的入口节点题目描述给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+解题思路：
+确定是否有环：定义两个指针，同时从链表头节点出发，慢指针每次走一步，快指针每次走两步，如果快指针追上了慢指针，那么链表</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
@@ -702,8 +667,12 @@ Truncate tab</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/链表/" target="_blank">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                    <a href="/tags/鲁棒性/" target="_blank">
+                        <span class="chip bg-color">鲁棒性</span>
                     </a>
                     
                 </div>
@@ -717,28 +686,26 @@ Truncate tab</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/595-big-countries/">
+                <a href="/2019/04/21/43-leftrotatestring/">
                     <div class="card-image">
                         
+                        <img src="https://upload-images.jianshu.io/upload_images/14484228-33cd3e32d0e5e2a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="左旋转字符串">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode刷题：595.Big Countries">
-                        
-                        <span class="card-title">LeetCode刷题：595.Big Countries</span>
+                        <span class="card-title">左旋转字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">595. Big CountriesSQL架构
-Create table If Not Exists World (name varchar(255), continent varchar(255), area int, populatio</div>
+                    <div class="summary">43. 左旋转字符串题目描述汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                    剑指 offer
                                 </a>
                             
                             
@@ -748,8 +715,8 @@ Create table If Not Exists World (name varchar(255), continent varchar(255), are
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/字符串/" target="_blank">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
                 </div>
