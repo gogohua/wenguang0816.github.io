@@ -452,7 +452,7 @@
 <h3 id="切换python版本"><a href="#切换python版本" class="headerlink" title="切换python版本"></a>切换python版本</h3><pre class=" language-bash"><code class="language-bash">$ pyenv global 3.5.2
 </code></pre>
 <p>查看切换结果</p>
-<pre class=" language-bash"><code class="language-bash">  system 
+<pre class=" language-bash"><code class="language-bash">  system
 * 3.5.2 <span class="token punctuation">(</span>set by /home/tony/.pyenv/version<span class="token punctuation">)</span>
 </code></pre>
 <p>切换回系统默认版本</p>
@@ -464,7 +464,7 @@
 <h2 id="安装virtualenv虚拟环境"><a href="#安装virtualenv虚拟环境" class="headerlink" title="安装virtualenv虚拟环境"></a>安装virtualenv虚拟环境</h2><p>利用Homebrew安装</p>
 <pre class=" language-bash"><code class="language-bash">$ brew <span class="token function">install</span> pyenv-virtualenv
 </code></pre>
-<h3 id="安装制定python版本的虚拟环境"><a href="#安装制定python版本的虚拟环境" class="headerlink" title="安装制定python版本的虚拟环境"></a>安装制定python版本的虚拟环境</h3><pre class=" language-bash"><code class="language-bash">$ pyenv virtualenv 3.5.2 <span class="token function">env</span>
+<h3 id="安装指定python版本的虚拟环境"><a href="#安装指定python版本的虚拟环境" class="headerlink" title="安装指定python版本的虚拟环境"></a>安装指定python版本的虚拟环境</h3><pre class=" language-bash"><code class="language-bash">$ pyenv virtualenv 3.5.2 <span class="token function">env</span>
 </code></pre>
 <p>该命令会创建名为<code>env</code>的虚拟环境，这个环境的真实目录位于：<code>~/.pyenv/versions/</code><br>我们依然可以通过<code>pyenv versions</code>查看当前的虚拟环境安装情况</p>
 <pre class=" language-bash"><code class="language-bash">* system <span class="token punctuation">(</span>set by /home/tony/.pyenv/version<span class="token punctuation">)</span>
