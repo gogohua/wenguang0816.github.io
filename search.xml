@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>macOS终端、vim美化(Solarized主题)</title>
+      <link href="/2019/07/14/environment/beautify_terminal/"/>
+      <url>/2019/07/14/environment/beautify_terminal/</url>
+      
+        <content type="html"><![CDATA[<h2 id="优化原因"><a href="#优化原因" class="headerlink" title="优化原因"></a>优化原因</h2><p>macOS自带的终端一开始是不好看的（个人向），黑底白字。在操作的时候不美观也不高效，就像下面这样：<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-1.jpg" alt><br>所以本着好看的原则，对macOS的终端进行一波优化。优化后的效果见图：<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-2.jpg" alt></p><h2 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h2><p>这里优化用到的是Solarized主题<a href="https://github.com/altercation/solarized" target="_blank" rel="noopener">GitHub</a>。Solarized是目前最完整的 Terminal/Editor/IDE 配色项目，几乎覆盖所有主流操作系统（Mac OS X, Linux, Windows）、编辑器和 IDE（Vim, Emacs, Xcode, TextMate, NetBeans, Visual Studio 等），终端（iTerm2, Terminal.app, Putty 等）。让我们看一下Solarized主题在mac终端上的效果，主题氛围Dark和Light两种。<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-3.jpg" alt></p><h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><ol><li>主题可以通过两种方式获取</li></ol><ul><li>从<a href="https://github.com/altercation/solarized" target="_blank" rel="noopener">GitHub</a>仓库中的<code>release</code>中下载作者发布的压缩包</li><li>通过终端克隆仓库的方式进行获取<pre class=" language-bash"><code class="language-bash">  <span class="token comment" spellcheck="true"># 在终端输入</span>  <span class="token function">git</span> clone git://github.com/altercation/solarized.git</code></pre></li></ul><ol start="2"><li>下载好主题后，从下载的文件中找到<code>osx-terminal.app-colors-solarized</code>文件夹，文件内容如图所示：<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-4.jpg" alt><br>文件中有Dark和Light两种主题，读者可以根据上文中的效果图选择安装（双击即可）。<em>在安装中可能会遇到安全提示，在<code>系统偏好设置\安全性与隐私</code>中允许即可。</em></li><li>打开终端，进入<code>偏好设置</code>便可以在<code>描述文件</code>中看到新安装的主题了，将新安装的主题设置为<strong>默认</strong>。并在<code>通用</code>设置为启动时打开刚才设置为默认的描述文件。<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-5.jpg" alt><br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-6.jpg" alt><br>现在主题就安装好了。</li></ol><h3 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h3><ol><li>将Solarized主题的vim文件拷贝到系统的vim目录<pre class=" language-bash"><code class="language-bash"> <span class="token function">cd</span> solarized <span class="token function">cd</span> vim-colors-solarized/colors <span class="token function">mkdir</span> -p ~/.vim/colors <span class="token function">cp</span> solarized.vim ~/.vim/colors/</code></pre></li><li>修改vim设置:<code>vim ~/.vimrc</code>，在该文件中添加一下内容<pre class=" language-bash"><code class="language-bash"> syntax on <span class="token keyword">set</span> background<span class="token operator">=</span>dark <span class="token comment" spellcheck="true"># 背景为dark，也可选light</span> colorscheme solarized</code></pre>修改后如图所示：（版本不同，效果可能有所不同）<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-7.jpg" alt></li></ol><h3 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h3><p>安装Solarized主题后，终端中执行<code>ls</code>等命令时，文件都是同一个颜色，没有高亮，可以在<code>.bash_profile</code>中添加一下设置</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vim ~/.bash_profile</span><span class="token function">export</span> GREP_OPTIONS<span class="token operator">=</span><span class="token string">'--color=auto'</span><span class="token function">export</span> TERM<span class="token operator">=</span><span class="token string">"xterm-color"</span>PS1<span class="token operator">=</span><span class="token string">'\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '</span></code></pre><p>设置后如图所示：<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-8.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> macOS </tag>
+            
+            <tag> 终端美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二叉树的创建和遍历</title>
       <link href="/2019/05/11/dsa/create_and_traveral_bitree/"/>
       <url>/2019/05/11/dsa/create_and_traveral_bitree/</url>
@@ -722,11 +749,11 @@
       
         <tags>
             
+            <tag> macOS </tag>
+            
             <tag> git </tag>
             
             <tag> 全局忽略 </tag>
-            
-            <tag> macOS </tag>
             
         </tags>
       
