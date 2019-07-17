@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="华为云代码托管服务及团队协作教程, 云中的Jason">
     <meta name="description" content="连接华为云仓库注册账号在华为云官网注册账号
@@ -256,11 +256,14 @@
     }
 </style>
 
-<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Follow Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -463,9 +466,11 @@
 </ol>
 <h3 id="连接华为仓库"><a href="#连接华为仓库" class="headerlink" title="连接华为仓库"></a>连接华为仓库</h3><ol>
 <li>设置SSH密钥<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-5.jpg" alt="设置我的SSH密钥"><br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-6.jpg" alt="添加SSH密钥"></li>
-<li>从本地获取SSH公钥（默认已安装git）<br>如果之前设置过github或gitee，那么系统是存在密钥的，密钥路径为<code>~/.ssh/id_rsa.pub</code>。<br>如果没有系统不存在密钥，那么在根目录执行以下命令创建密钥:<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"您的email"</span>
-</code></pre>
-<em>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，建议采用不输入密码方式。</em><br>可以采用两种方法将密钥复制到密钥栏：<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1查看密钥并手动复制</span>
+<li>从本地获取SSH公钥（默认已安装git）<br>如果之前设置过github或gitee，那么系统是存在密钥的，密钥路径为<code>~/.ssh/id_rsa.pub</code>。<br>如果没有系统不存在密钥，那么在根目录执行以下命令创建密钥:<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"您的email"</span></code></pre>
+</li>
+</ol>
+<p><em>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，建议采用不输入密码方式。</em><br>可以采用两种方法将密钥复制到密钥栏：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1查看密钥并手动复制</span>
 <span class="token function">cat</span> ~/.ssh/id_rsa.pub
 <span class="token comment" spellcheck="true">#2使用命令复制密钥到剪切板</span>
 <span class="token comment" spellcheck="true">#Windows</span>
@@ -473,14 +478,11 @@ clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 <span class="token comment" spellcheck="true">#Mac</span>
 pbcopy <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 <span class="token comment" spellcheck="true">#Linux</span>
-xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
-</code></pre>
-接下来，我们尝试将新建的仓库克隆到本地</li>
-</ol>
+xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub</code></pre>
+<p>接下来，我们尝试将新建的仓库克隆到本地</p>
 <h3 id="克隆仓库及常用git指令"><a href="#克隆仓库及常用git指令" class="headerlink" title="克隆仓库及常用git指令"></a>克隆仓库及常用git指令</h3><ol>
 <li>获取仓库地址<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-7.jpg" alt="仓库地址"></li>
-<li>在终端执行克隆指令<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone 刚复制的地址
-</code></pre>
+<li>在终端执行克隆指令<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone 刚复制的地址</code></pre>
 就可以将远程仓库克隆到本地了</li>
 <li>常用git指令：<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加文件</span>
 <span class="token function">git</span> add filename
@@ -489,20 +491,23 @@ xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 <span class="token comment" spellcheck="true">#确认提交</span>
 <span class="token function">git</span> commit -m <span class="token string">'修改原因'</span>
 <span class="token comment" spellcheck="true">#push到远程仓库,分支可选</span>
-<span class="token function">git</span> push origin master
-</code></pre>
+<span class="token function">git</span> push origin master</code></pre>
 想学习更多，请戳廖雪峰大神<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></li>
 </ol>
 <h2 id="团队协作"><a href="#团队协作" class="headerlink" title="团队协作"></a>团队协作</h2><p>这里介绍一下如何团队协作</p>
 <h3 id="添加成员"><a href="#添加成员" class="headerlink" title="添加成员"></a>添加成员</h3><ol>
 <li>进入项目<strong>设置</strong>界面<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-8.jpg" alt="设置"></li>
 <li>在<strong>成员管理</strong>中添加成员，通过链接邀请<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-9.jpg" alt="邀请成员"></li>
-<li>在<strong>待审核</strong>界面通过审核，即可在项目成员中看到所邀请的用户，可以根据角色权限说明来自行决定项目角色。<br><em>PS：个人仓库可以最多五个人协同开发</em></li>
-<li>之后进入对应仓库的<strong>成员</strong>页面，添加成员即可<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-10.jpg" alt="添加成员到仓库"><br><em>PS：被邀请成员也要设置好SSH密钥，才能克隆远程仓库</em><br>基本内容就这些了，以后想到再补充！</li>
+<li>在<strong>待审核</strong>界面通过审核，即可在项目成员中看到所邀请的用户，可以根据角色权限说明来自行决定项目角色。</li>
 </ol>
+<p><em>PS：个人仓库可以最多五个人协同开发</em></p>
+<ol start="4">
+<li>之后进入对应仓库的<strong>成员</strong>页面，添加成员即可<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190305-10.jpg" alt="添加成员到仓库"></li>
+</ol>
+<p><em>PS：被邀请成员也要设置好SSH密钥，才能克隆远程仓库</em><br>基本内容就这些了，以后想到再补充！</p>
 
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -650,14 +655,18 @@ xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
         
             <div class="center-align">
                 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
                 </a>
             </div>
-            <br>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
                     《华为云代码托管服务及团队协作教程》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/03/05/share/huaweicloud_git/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/03/05/share/huaweicloud_git/" property="cc:attributionName"
+               rel="cc:attributionURL">
                 Jason
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -1012,6 +1021,10 @@ xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
 
 
 
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -1024,7 +1037,8 @@ xclip -sel clip <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
     <div class="modal-content">
         <div class="search-header">
             <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>

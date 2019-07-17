@@ -2,12 +2,12 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="（转载）漫画：如何将一个链表“逆序”？, 云中的Jason">
     <meta name="description" content="声明：本文转载自微信公众号程序员小灰，以获作者授权转载
 
-——第二天——-
+------第二天-------
 
 
 
@@ -23,14 +23,7 @@
 
 
 
-
-
-
-
-
-
-
-让">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -273,11 +266,14 @@
     }
 </style>
 
-<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Follow Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -470,7 +466,7 @@
             <div id="articleContent">
                 <p>声明：本文转载自微信公众号<strong>程序员小灰</strong>，以获作者授权转载<br><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-1.jpg" alt></p>
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-2.jpg" alt></p>
-<center>——第二天——-</center>
+<center>------第二天-------</center>
 
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-3.jpg" alt></p>
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-4.jpg" alt></p>
@@ -574,8 +570,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
         temp <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p>C++</p>
 </blockquote>
@@ -645,8 +640,7 @@ Node<span class="token operator">*</span> <span class="token function">reverseLi
         cout <span class="token operator">&lt;&lt;</span> tmp<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
         tmp <span class="token operator">=</span> tmp<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>链表反转的逻辑本身，都在reverseLinkedList方法当中。在这里我们把链表的头节点作为了静态成员，实际上也可以作为方法参数传入，只是逻辑上需要一些小小的修改。</p>
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-32.jpg" alt></p>
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-33.jpg" alt></p>
@@ -656,7 +650,7 @@ Node<span class="token operator">*</span> <span class="token function">reverseLi
 <p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190320-36.jpg" alt></p>
 
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -804,14 +798,18 @@ Node<span class="token operator">*</span> <span class="token function">reverseLi
         
             <div class="center-align">
                 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
                 </a>
             </div>
-            <br>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
                     《（转载）漫画：如何将一个链表“逆序”？》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/03/20/dsa/reverse_linkedlist/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/03/20/dsa/reverse_linkedlist/" property="cc:attributionName"
+               rel="cc:attributionURL">
                 Jason
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -1166,6 +1164,10 @@ Node<span class="token operator">*</span> <span class="token function">reverseLi
 
 
 
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -1178,7 +1180,8 @@ Node<span class="token operator">*</span> <span class="token function">reverseLi
     <div class="modal-content">
         <div class="search-header">
             <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>

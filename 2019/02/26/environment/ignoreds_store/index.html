@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="macOS下忽略.DS_Store文件, 云中的Jason">
     <meta name="description" content="在macOS平台下会自动生成.DS_Store文件，在使用git提交的过程中，会发现git将.DS_Store文件一并提交了，这是我们不需要的。我们可以在项目中新建一个.gitignore文件，将.DS_Store添加进去，但是这种方式只对">
@@ -248,11 +248,14 @@
     }
 </style>
 
-<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Follow Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/wenguang0816/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -358,42 +361,35 @@
 <ol>
 <li>在<code>home</code>目录下新建<code>.gitignore_global</code>文件，文件内容如下<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># .gitignore_global</span>
 .DS_Store
-.DS_Store?
-</code></pre>
+.DS_Store?</code></pre>
 </li>
-<li><p>编辑在<code>home</code>目录下的<code>.gitconfig</code>文件，使其引入<code>.gitignore_global</code>的设置。<code>.gitconfig</code>的内容如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>user<span class="token punctuation">]</span>
+<li>编辑在<code>home</code>目录下的<code>.gitconfig</code>文件，使其引入<code>.gitignore_global</code>的设置。<code>.gitconfig</code>的内容如下：<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>user<span class="token punctuation">]</span>
  name <span class="token operator">=</span> yourname
  email <span class="token operator">=</span> yourname@github.com
 <span class="token punctuation">[</span>core<span class="token punctuation">]</span>
- excludesfile <span class="token operator">=</span> /Users/yourname/.gitignore_global
-</code></pre>
-<p><em>home路径中的yourname和自己的对应</em></p>
-</li>
-<li><p>如果项目中已经出现了<code>.DS_Store</code>文件并且已经提交了，我们需要将<code>.DS_Store</code>文件删除，并再次提交。</p>
+ excludesfile <span class="token operator">=</span> /Users/yourname/.gitignore_global</code></pre>
 </li>
 </ol>
+<p><em>home路径中的yourname和自己的对应</em></p>
+<ol start="3">
+<li>如果项目中已经出现了<code>.DS_Store</code>文件并且已经提交了，我们需要将<code>.DS_Store</code>文件删除，并再次提交。</li>
+</ol>
 <ul>
-<li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name .DS_Store -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">git</span> <span class="token function">rm</span> -f --ignore-unmatch
-</code></pre>
+<li>删除项目中的所有.DS_Store。这会跳过不在项目中的 .DS_Store<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name .DS_Store -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">git</span> <span class="token function">rm</span> -f --ignore-unmatch</code></pre>
 </li>
-<li>如果要删除目录及其子目录下的<code>.DS_Store</code>，执行以下指令<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name <span class="token string">'*.DS_Store'</span> -type f -delete
-</code></pre>
+<li>如果要删除目录及其子目录下的<code>.DS_Store</code>，执行以下指令<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> <span class="token keyword">.</span> -name <span class="token string">'*.DS_Store'</span> -type f -delete</code></pre>
 </li>
 <li>更新项目<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add --all
-<span class="token function">git</span> commit -m <span class="token string">'.DS_Store banished!'</span>
-</code></pre>
+<span class="token function">git</span> commit -m <span class="token string">'.DS_Store banished!'</span></code></pre>
 </li>
 </ul>
 <ol start="4">
 <li>当然也可以在终端通过修改系统设置来禁止生成<code>.DS_Store</code>（<em>好像不能禁止本地生成</em>）。</li>
 </ol>
 <ul>
-<li>禁止<code>.DS_Store</code>生成：<pre class=" language-bash"><code class="language-bash">defaults <span class="token function">write</span> com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
-</code></pre>
+<li>禁止<code>.DS_Store</code>生成：<pre class=" language-bash"><code class="language-bash">defaults <span class="token function">write</span> com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</code></pre>
 </li>
-<li>恢复<code>.DS_Store</code>生成<pre class=" language-bash"><code class="language-bash">defaults delete com.apple.desktopservices DSDontWriteNetworkStores
-</code></pre>
+<li>恢复<code>.DS_Store</code>生成<pre class=" language-bash"><code class="language-bash">defaults delete com.apple.desktopservices DSDontWriteNetworkStores</code></pre>
 参考博客：</li>
 </ul>
 <ol>
@@ -404,7 +400,7 @@
 </ol>
 
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -552,14 +548,18 @@
         
             <div class="center-align">
                 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
                 </a>
             </div>
-            <br>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
                     《macOS下忽略.DS_Store文件》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/02/26/environment/ignoreds_store/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/02/26/environment/ignoreds_store/" property="cc:attributionName"
+               rel="cc:attributionURL">
                 Jason
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -812,6 +812,10 @@ Exampl
 
 
 
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -824,7 +828,8 @@ Exampl
     <div class="modal-content">
         <div class="search-header">
             <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
