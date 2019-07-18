@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.wenguang0816.top/2019/05/11/dsa/create_and_traveral_bitree/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/03/20/dsa/reverse_linkedlist/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/07/14/environment/beautify_terminal/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/02/26/environment/ignoreds_store/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/03/10/environment/pyenv_and_virtualenv/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/118_pascals_triangle/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/136_single_number/</loc>
-    <lastmod>2019-07-18</lastmod>
-  </url>  <url>
     <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/182_duplicate_emails/</loc>
     <lastmod>2019-07-18</lastmod>
   </url>  <url>
@@ -176,6 +155,27 @@
     <lastmod>2019-07-18</lastmod>
   </url>  <url>
     <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/sword_refers_to_offer/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/05/11/dsa/create_and_traveral_bitree/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/03/20/dsa/reverse_linkedlist/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/07/14/environment/beautify_terminal/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/26/environment/ignoreds_store/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/03/10/environment/pyenv_and_virtualenv/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/118_pascals_triangle/</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/136_single_number/</loc>
     <lastmod>2019-07-18</lastmod>
   </url>
 </urlset>
