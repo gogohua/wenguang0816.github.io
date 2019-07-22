@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="二进制中1的个数, 云中的Jason">
-    <meta name="description" content="11. 二进制中1的个数题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
-解题思路：
-思路1：直接去掉二进制中位置最靠后的1。假设n=1100，则n-1=1011，那么n&amp;amp;(n-1)=1000,位置最靠后的1">
+    <meta name="keywords" content="不用加减乘除做加法, 云中的Jason">
+    <meta name="description" content="48. 不用加减乘除做加法题目描述写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
+解题思路：题目要求不得使用+、-、*、/四则运算，了解计算机CPU的物理实现或者数字电路的同学应该知道，计算机完成计算是通过门">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="baidu-site-verification" content="IFH5rudT4P">
     <meta name="google-site-verification" content="VUFL73EWMzmpuGK9EUgVofeIBATc0gshz-vL0O7pLG8">
     <meta name="msvalidate.01" content="DF7237A289049791E605C7650473FA5F">
-    <title>二进制中1的个数 | 云中的Jason</title>
+    <title>不用加减乘除做加法 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/20190401-4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/20190722-1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        二进制中1的个数
+                        不用加减乘除做加法
                     </div>
                 </div>
             </div>
@@ -386,12 +385,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/位运算/" target="_blank">
-                                <span class="chip bg-color">位运算</span>
+                            <a href="/tags/递归/" target="_blank">
+                                <span class="chip bg-color">递归</span>
                             </a>
                         
-                            <a href="/tags/数学/" target="_blank">
-                                <span class="chip bg-color">数学</span>
+                            <a href="/tags/逻辑与/" target="_blank">
+                                <span class="chip bg-color">逻辑与</span>
+                            </a>
+                        
+                            <a href="/tags/逻辑异或/" target="_blank">
+                                <span class="chip bg-color">逻辑异或</span>
                             </a>
                         
                     </div>
@@ -414,14 +417,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-01
+                    2019-07-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        209
+                        487
                     </div>
                     
 
@@ -444,39 +447,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="11-二进制中1的个数"><a href="#11-二进制中1的个数" class="headerlink" title="11. 二进制中1的个数"></a><a href="https://www.nowcoder.com/practice/8ee967e43c2c4ec193b040ea7fbb10b8?tpId=13&tqId=11164&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">11. 二进制中1的个数</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
-<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul>
-<li>思路1：直接去掉二进制中位置最靠后的1。假设<code>n=1100</code>，则<code>n-1=1011</code>，那么<code>n&amp;(n-1)=1000</code>,位置最靠后的1被去掉。 时间复杂度O(M), M为1的个数</li>
-<li>思路2：利用标志位遍历int的32位; 时间复杂度O(1), 32次循环</li>
-</ul>
-<p><strong>注：负数右移后，最高位补1，如果右移判断最低位将导致死循环</strong> </p>
-<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 方法1</span>
+                <h3 id="48-不用加减乘除做加法"><a href="#48-不用加减乘除做加法" class="headerlink" title="48. 不用加减乘除做加法"></a><a href="https://www.nowcoder.com/practice/59ac416b4b944300b617d4f7f111b215?tpId=13&tqId=11201&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">48. 不用加减乘除做加法</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>题目要求不得使用+、-、*、/四则运算，了解计算机CPU的物理实现或者数字电路的同学应该知道，计算机完成计算是通过门电路（与门、非门、与非门等等）进行二进制运算来实现我们人类认知的所有运算的。我们先观察一下十进制进行运算的过程。这里我们以<code>8+14=22</code>为例：</p>
+<ol>
+<li>只做各位相加不进位，此时相加的结果是<code>12</code>（个位数8和4相加不进位是2，十位相加结果是1）</li>
+<li>做进位，8+4有进位，进位值为<code>10</code></li>
+<li>将前两步的结果相加：<code>12+10</code>的结果为<code>22</code>，也就是8+14的结果。（重复1、2步骤）</li>
+</ol>
+<p>可以看出，十进制进行加法运算时，最终的结果 = 无进位加法 + 进位值。这个结论同样适用于二进制运算，同样以<code>8+14</code>即<code>1000 + 1110</code>为例：</p>
+<ol>
+<li>只做各位相加不进位，此时结果为<code>0110</code></li>
+<li>做进位，两者相加进位值为<code>10000</code></li>
+<li>将两步结果相加：<code>0110 + 10000 = 10110</code>转化为十进制为<code>22</code>（重复1、2步骤）</li>
+</ol>
+<p>我们来观察一下二进制运算1、2步的结果，<code>0110</code>是<code>1000 ^ 1110</code>的结果，<code>10000</code>是<code>1000 &amp; 1110</code>后左移一位的结果。这样我们只需要重复1、2步骤，直到没有进位为止，便可得到最终结果。</p>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 方法1: while循环</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">NumberOf1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 最终的结果 = 无进位加法 + 进位值</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>num2 <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            n <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> temp <span class="token operator">=</span> num1 <span class="token operator">^</span> num2<span class="token punctuation">;</span>
+            num2 <span class="token operator">=</span> <span class="token punctuation">(</span>num1 <span class="token operator">&amp;</span> num2<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            num1 <span class="token operator">=</span> temp<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> num1<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 方法2:</span>
+<span class="token comment" spellcheck="true">// 方法2: 递归实现</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-     <span class="token keyword">int</span>  <span class="token function">NumberOf1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-         <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-         <span class="token keyword">while</span><span class="token punctuation">(</span>flag <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-         <span class="token punctuation">{</span>
-             <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">&amp;</span> flag<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                 <span class="token operator">++</span>cnt<span class="token punctuation">;</span>
-             flag <span class="token operator">=</span> flag <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
-         <span class="token punctuation">}</span>
-         <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 最终的结果 = 无进位加法 + 进位值</span>
+        <span class="token keyword">return</span> num2 <span class="token operator">?</span> <span class="token function">Add</span><span class="token punctuation">(</span>num1 <span class="token operator">^</span> num2<span class="token punctuation">,</span> <span class="token punctuation">(</span>num1 <span class="token operator">&amp;</span> num2<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> num1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
@@ -636,9 +643,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《二进制中1的个数》
+                    《不用加减乘除做加法》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/04/01/sword_refers_to_offer/11_number_of_1_bits/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/22/sword_refers_to_offer/48_add/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Jason
             </a> 采用
@@ -679,7 +686,7 @@
         repo: 'wenguang0816.github.io',
         owner: 'wenguang0816',
         admin: ["wenguang0816"],
-        id: '2019-04-01T16-50-00',
+        id: '2019-07-22T22-48-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -700,79 +707,28 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/01/sword_refers_to_offer/07_fibonacci_series/">
+                <a href="/2019/07/22/sword_refers_to_offer/48_add/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190401-3.jpg" class="responsive-img" alt="斐波那契数列">
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190722-1.jpg" class="responsive-img" alt="不用加减乘除做加法">
                         
-                        <span class="card-title">斐波那契数列</span>
+                        <span class="card-title">不用加减乘除做加法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指 offer：7、斐波那契数列
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
-                                    剑指 offer
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/循环/" target="_blank">
-                        <span class="chip bg-color">循环</span>
-                    </a>
-                    
-                    <a href="/tags/斐波那契/" target="_blank">
-                        <span class="chip bg-color">斐波那契</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/04/01/sword_refers_to_offer/01_lookup_in_a_two_dimensional_array/">
-                    <div class="card-image">
-                        
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190401-2.jpg" class="responsive-img" alt="二维数组中的查找">
-                        
-                        <span class="card-title">二维数组中的查找</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            剑指 offer：1、二维数组中的查找
+                            剑指 offer：48、不用加减乘除做加法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
                             </span>
                         <span class="publish-author">
                             
@@ -786,15 +742,72 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/递归/" target="_blank">
+                        <span class="chip bg-color">递归</span>
                     </a>
                     
-                    <a href="/tags/查找/" target="_blank">
-                        <span class="chip bg-color">查找</span>
+                    <a href="/tags/逻辑与/" target="_blank">
+                        <span class="chip bg-color">逻辑与</span>
+                    </a>
+                    
+                    <a href="/tags/逻辑异或/" target="_blank">
+                        <span class="chip bg-color">逻辑异或</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/14/environment/beautify_terminal/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190714-3.jpg" class="responsive-img" alt="macOS终端、vim美化(Solarized主题)">
+                        
+                        <span class="card-title">macOS终端、vim美化(Solarized主题)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            利用Solarized主题对mac终端进行优化
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/macOS/" target="_blank">
+                        <span class="chip bg-color">macOS</span>
+                    </a>
+                    
+                    <a href="/tags/终端美化/" target="_blank">
+                        <span class="chip bg-color">终端美化</span>
                     </a>
                     
                 </div>
