@@ -421,7 +421,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        331
+                        361
                     </div>
                     
 
@@ -449,7 +449,7 @@
 <p>平衡二叉树：Wiki:在计算机科学中，AVL树是最早被发明的自平衡二叉查找树。在AVL树中，任一节点对应的两棵子树的最大高度差为1，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是O(logn)</p>
 </blockquote>
 <p>我们可以通过递归的方式来获取二叉树每个节点的左右子树的深度，然后比较左右子树的深度，如果二者深度差值大于<code>1</code>，则可以判定该二叉树不是平衡二叉树，反之，该树为平衡二叉树。</p>
-<p>如果从上向下进行判断，则会导致判断上层节点时，需要多次判断其下层节点。所以我们采用从下向上的方式进行判断。</p>
+<p>如果从上向下进行判断，则会导致判断上层节点时，需要多次判断其下层节点。所以我们采用从下向上的方式进行判断，如果某节点出现左右子树深度差大于<code>1</code>，则可判定该树不是平衡二叉树。</p>
 <h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">bool</span> <span class="token function">IsBalanced_Solution</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> pRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -908,7 +908,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.4k</span>
+                <span class="white-color">19.5k</span>
             
 
             
