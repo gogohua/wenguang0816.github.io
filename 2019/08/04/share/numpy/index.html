@@ -782,11 +782,20 @@ a<span class="token punctuation">[</span><span class="token number">0</span><spa
 [11  1  2  3] [11  1  2  3] [11  1  2  3]
 '''</span></code></pre>
 <h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><blockquote>
-<p>外围和内部元素都进行了拷贝对象本身，而不是引用。也就是，把对象复制一遍，并且该对象中引用的其他对象也复制。<br><code>copy()</code>的方式没有关联性</p>
-<pre class=" language-python"><code class="language-python">d <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span></code></pre>
+<p>外围和内部元素都进行了拷贝对象本身，而不是引用。也就是，把对象复制一遍，并且该对象中引用的其他对象也复制。</p>
 </blockquote>
-<h1 id="a的值改变，d的值不会改变"><a href="#a的值改变，d的值不会改变" class="headerlink" title="a的值改变，d的值不会改变"></a>a的值改变，d的值不会改变</h1><p>a[3] = 44<br>print(a)<br>print(d)<br>‘’’<br>[11  1  2  3]<br>[11  1  2 44]<br>[11  1  2  3]<br>‘’’<br>```</p>
+<p><code>copy()</code>的方式没有关联性</p>
+<pre class=" language-python"><code class="language-python">d <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># a的值改变，d的值不会改变</span>
+a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">44</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[11  1  2  3]
+[11  1  2 44]
+[11  1  2  3]
+'''</span></code></pre>
 
             </div>
             <hr/>
