@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题：832.Flipping an Image, 云中的Jason">
-    <meta name="description" content="832. Flipping an ImageGiven a binary matrix A, we want to flip the image horizontally, then invert it, and return the re">
+    <meta name="keywords" content="包含min函数的栈, 云中的Jason">
+    <meta name="description" content="20. 包含min函数的栈题目描述定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+解题思路：这道题我们需要创建两个栈，一个栈base来作为栈结构主体，个辅助栈sMin来记录入栈的最小值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="baidu-site-verification" content="IFH5rudT4P">
     <meta name="google-site-verification" content="VUFL73EWMzmpuGK9EUgVofeIBATc0gshz-vL0O7pLG8">
     <meta name="msvalidate.01" content="DF7237A289049791E605C7650473FA5F">
-    <title>LeetCode刷题：832.Flipping an Image | 云中的Jason</title>
+    <title>包含min函数的栈 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -267,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/20191017-1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode刷题：832.Flipping an Image
+                        包含min函数的栈
                     </div>
                 </div>
             </div>
@@ -384,8 +385,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数组/" target="_blank">
-                                <span class="chip bg-color">数组</span>
+                            <a href="/tags/栈/" target="_blank">
+                                <span class="chip bg-color">栈</span>
                             </a>
                         
                     </div>
@@ -396,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                LeetCode
+                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
+                                剑指 offer
                             </a>
                         
                     </div>
@@ -408,14 +409,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-24
+                    2019-08-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        323
+                        360
                     </div>
                     
 
@@ -438,46 +439,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="832-Flipping-an-Image"><a href="#832-Flipping-an-Image" class="headerlink" title="832. Flipping an Image"></a><a href="https://leetcode-cn.com/problems/flipping-an-image/" target="_blank" rel="noopener">832. Flipping an Image</a></h4><p>Given a binary matrix <code>A</code>, we want to flip the image horizontally, then invert it, and return the resulting image.<br>To flip an image horizontally means that each row of the image is reversed.  For example, flipping <code>[1, 1, 0]</code> horizontally results in <code>[0, 1, 1]</code>.<br>To invert an image means that each <code>0</code> is replaced by <code>1</code>, and each <code>1</code> is replaced by <code>0</code>. For example, inverting <code>[0, 1, 1]</code> results in <code>[1, 0, 0]</code>.</p>
-<p><strong>Example 1:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> [[1,1,0],[1,0,1],[0,0,0]]</p>
-<p><strong>Output:</strong> [[1,0,0],[0,1,0],[1,1,1]]</p>
-<p><strong>Explanation:</strong> First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].<br>Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]</p>
-</blockquote>
-<p><strong>Example 2:</strong></p>
-<blockquote>
-<p><strong>Input:</strong> [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]</p>
-<p><strong>Output:</strong> [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</p>
-<p><strong>Explanation:</strong> First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].<br>Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</p>
-</blockquote>
-<p><strong>Notes:</strong></p>
-<ul>
-<li><code>1 &lt;= A.length = A[0].length &lt;= 20</code></li>
-<li><code>0 &lt;= A[i][j] &lt;= 1</code></li>
-</ul>
-<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
-<li>翻转：利用临时数组反转</li>
-<li>反转：与1异或获得反转效果或者利用if-else判断，<strong>不可按位取反</strong><h5 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+                <h3 id="20-包含min函数的栈"><a href="#20-包含min函数的栈" class="headerlink" title="20. 包含min函数的栈"></a><a href="https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">20. 包含min函数的栈</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>这道题我们需要创建两个栈，一个栈<code>base</code>来作为栈结构主体，个辅助栈<code>sMin</code>来记录入栈的最小值，根据题目接口，我们需要实现四个方法：</p>
+<ol>
+<li>void push(int value): 在每次入栈时，如果入栈值<code>value</code>小于<code>sMin</code>中的元素，则将<code>value</code>压栈到<code>sMin</code>，这样能够保证最小元素永远在<code>sMin</code>栈顶</li>
+<li>void pop(): 如果出栈元素等于<code>sMin</code>栈顶元素时，<code>sMin</code>栈顶元素出栈</li>
+<li>int top(): 返回栈<code>base</code>的栈顶元素</li>
+<li>int min(): 返回栈<code>sMin</code>的栈顶元素</li>
+</ol>
+<p>笔者展示的代码只是简单的实现了题目要求的包含min函数的栈，并且通过了牛客网的测试用例。不过代码并不完整，比如在调用<code>pop()</code>方法时应该去判断<code>base</code>和<code>sMin</code>是否为空，如果为空应该抛出异常。有兴趣的读者可以进一步完善代码。</p>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">flipAndInvertImage</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> vint <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> vint <span class="token operator">!=</span> A<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>vint<span class="token punctuation">)</span>
-      <span class="token punctuation">{</span>
-          <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>vint<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">tmp</span><span class="token punctuation">(</span>len<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-              tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>vint<span class="token punctuation">)</span><span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>i <span class="token operator">:</span> tmp<span class="token punctuation">)</span>
-          <span class="token punctuation">{</span>
-              i <span class="token operator">^</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-          <span class="token operator">*</span>vint <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">return</span> A<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        base<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>sMin<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            sMin<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">&lt;</span> sMin<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            sMin<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>base<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> sMin<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            sMin<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        base<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>base<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> base<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> <span class="token number">0x7fffffff</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>sMin<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> sMin<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> <span class="token number">0x7fffffff</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> base<span class="token punctuation">,</span> sMin<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-</li>
-</ul>
 
             </div>
             <hr/>
@@ -636,9 +637,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode刷题：832.Flipping an Image》
+                    《包含min函数的栈》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/02/24/leetcode/832_flipping_an_image/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/sword_refers_to_offer/20_min/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Jason
             </a> 采用
@@ -679,7 +680,7 @@
         repo: 'wenguang0816.github.io',
         owner: 'wenguang0816',
         admin: ["wenguang0816"],
-        id: '2019-02-24T13-23-00',
+        id: '2019-08-11T18-40-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -704,34 +705,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/24/leetcode/852_peak_index_in_a_mountain_array/">
+                <a href="/2019/10/10/environment/zsh_for_mac/">
                     <div class="card-image">
                         
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20191010-1.jpg" class="responsive-img" alt="Mac终端oh-my-zsh配置">
                         
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/medias/featureimages/6.jpg" class="responsive-img" alt="LeetCode刷题：852.Peak Index in a Mountain Array">
-                        
-                        <span class="card-title">LeetCode刷题：852.Peak Index in a Mountain Array</span>
+                        <span class="card-title">Mac终端oh-my-zsh配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            852. Peak Index in a Mountain ArrayLet’s call an array A a mountain if the following properties hold:
-
-A.length &gt;= 3
-
+                            Mac终端oh-my-zsh配置
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
@@ -741,8 +738,12 @@ A.length &gt;= 3
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/二分查找/" target="_blank">
-                        <span class="chip bg-color">二分查找</span>
+                    <a href="/tags/macOS/" target="_blank">
+                        <span class="chip bg-color">macOS</span>
+                    </a>
+                    
+                    <a href="/tags/终端美化/" target="_blank">
+                        <span class="chip bg-color">终端美化</span>
                     </a>
                     
                 </div>
@@ -756,31 +757,30 @@ A.length &gt;= 3
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/24/leetcode/807_max_increase_to_keep_city_skyline/">
+                <a href="/2019/08/04/share/numpy/">
                     <div class="card-image">
                         
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190804-1.jpg" class="responsive-img" alt="Numpy基础">
                         
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode刷题：807.Max Increase to Keep City Skyline">
-                        
-                        <span class="card-title">LeetCode刷题：807.Max Increase to Keep City Skyline</span>
+                        <span class="card-title">Numpy基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            807. Max Increase to Keep City SkylineIn a 2 dimensional array grid, each value grid[i][j] represents the height of a bu
+                            Numpy基础
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
@@ -790,8 +790,8 @@ A.length &gt;= 3
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/Numpy/" target="_blank">
+                        <span class="chip bg-color">Numpy</span>
                     </a>
                     
                 </div>
