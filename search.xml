@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>修改ubuntu用户名</title>
+      <link href="/2019/11/25/share/modify_ubuntu_username/"/>
+      <url>/2019/11/25/share/modify_ubuntu_username/</url>
+      
+        <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>从腾讯云申请的云服务器(ubuntu系统)的默认用户名为<code>ubuntu</code>，一般来说可以也接受，但是作为自己要使用的机器还是要有点个性化。通过网上的帖子，摸索了半天才修改完成，现在将自己的经验分享给大家。</p><h3 id="切换到root账户"><a href="#切换到root账户" class="headerlink" title="切换到root账户"></a>切换到root账户</h3><p>因为修改普通账户的用户名，所以建议切换到<code>root</code>用户，这样可以避免一些权限的问题和其他不必要的影响。新申请或安装的机器<code>root</code>用户是没有密码的，所以可以先为<code>root</code>账户设置密码：</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 如果设置了密码可跳过此步</span>ubuntu@VM-0-4-ubuntu:~$ <span class="token function">sudo</span> <span class="token function">passwd</span> root<span class="token comment" spellcheck="true"># 为用户修改密码也可以使用此命令</span></code></pre><p>然后切换到<code>root</code>用户(需要输入密码）：</p><pre class=" language-bash"><code class="language-bash">ubuntu@VM-0-4-ubuntu:~$ <span class="token function">su</span> rootPassword:root@VM-0-4-ubuntu:/home/ubuntu<span class="token comment" spellcheck="true">#</span></code></pre><h3 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h3><p>修改用户名我们需要进行四步操作：</p><h4 id="1-修改-etc-passwd文件-vim-etc-passwd"><a href="#1-修改-etc-passwd文件-vim-etc-passwd" class="headerlink" title="1.修改/etc/passwd文件: vim /etc/passwd"></a>1.修改<code>/etc/passwd</code>文件: <code>vim /etc/passwd</code></h4><pre><code>```bashubuntu:x:500:500::/home/ubuntu:/bin/bash# 把用户名ubuntu改成：你想要的用户名，其他都不要修改test:x:500:500::/home/test:/bin/bash# 打开文件后回发现很多内容，可以利用替换指令进行修改# :1,$s/ubuntu/test/g# 解释: 替换第 1 行开始到最后一行中每一行所有 ubuntu 为 test```</code></pre><p>最后输入<code>:wq!</code>保存退出</p><p><em>ps：这里网上有帖子说用<code>gedit</code>进行修改，不过在新申请或安装的机器中是没有<code>gedit</code>的，所以可以使用<code>vim/vi</code>来代替</em></p><h4 id="2-修改-etc-shadow文件-vim-etc-shadow"><a href="#2-修改-etc-shadow文件-vim-etc-shadow" class="headerlink" title="2.修改/etc/shadow文件: vim /etc/shadow"></a>2.修改<code>/etc/shadow</code>文件: <code>vim /etc/shadow</code></h4><pre class=" language-bash"><code class="language-bash">ubunt:<span class="token variable">$6</span><span class="token variable">$ULolz</span><span class="token punctuation">..</span>.EMVYj/:18222:0:99999:7:::<span class="token comment" spellcheck="true"># 把用户名ubuntu改成：你想要的用户名，其他都不要修改</span>test:<span class="token variable">$6</span><span class="token variable">$ULolz</span><span class="token punctuation">..</span>.EMVYj/:18222:0:99999:7:::</code></pre><h4 id="3-修改-etc-group文件-vim-etc-group"><a href="#3-修改-etc-group文件-vim-etc-group" class="headerlink" title="3.修改/etc/group文件: vim /etc/group"></a>3.修改<code>/etc/group</code>文件: <code>vim /etc/group</code></h4><pre class=" language-bash"><code class="language-bash">ubunt:x:1:root,bin,ubuntu<span class="token comment" spellcheck="true">#...</span><span class="token comment" spellcheck="true"># 这个文件中的原用户名有很多，可以使用第一步中提到的替换指令修改:</span>:1,<span class="token variable">$s</span>/ubuntu/test/g</code></pre><h4 id="4-修改用户目录"><a href="#4-修改用户目录" class="headerlink" title="4.修改用户目录"></a>4.修改用户目录</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">mv</span> /home/ubuntu /home/test</code></pre><p>此时，我们就可以更改万用户名了，可以切换到新的用户名测试一下：</p><pre class=" language-bash"><code class="language-bash">root@VM-0-4-ubuntu:~$ <span class="token function">su</span> <span class="token function">test</span>test@VM-0-4-ubuntu:~$</code></pre><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><p><a href="https://blog.csdn.net/zhaokx3/article/details/64127454" target="_blank" rel="noopener">CSDN: Ubuntu 修改用户名-OneDay-X</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> 用户名 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mac终端oh-my-zsh配置</title>
       <link href="/2019/10/10/environment/zsh_for_mac/"/>
       <url>/2019/10/10/environment/zsh_for_mac/</url>
