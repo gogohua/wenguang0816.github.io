@@ -1,96 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/944_delete_columns_to_make_sorted/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/961_n_repeated_element_in_size_2n_array/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/08/04/share/numpy/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/01/share/git_tag/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/03/05/share/huaweicloud_git/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/11/25/share/modify_ubuntu_username/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/02/28/share/qt_serial_communication/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/01_lookup_in_a_two_dimensional_array/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/03_print_linkedlist_from_tail_to_head/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/18/sword_refers_to_offer/05_queue_with_two_stacks/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/07_fibonacci_series/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/08_jumpfloor/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/09_jumpfloorii/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/04/sword_refers_to_offer/10_rectcover/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/11_number_of_1_bits/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/12_power/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/23/sword_refers_to_offer/14_findkthtotail/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/15_reverse_linkedlist/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/17/sword_refers_to_offer/18_mirror/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/08/11/sword_refers_to_offer/20_min/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/07/25/sword_refers_to_offer/30_findgreatestsumofsubarray/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/17/sword_refers_to_offer/38_treedepth/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/07/27/sword_refers_to_offer/39_isbalanced/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/43_leftrotatestring/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/47_sum/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/07/22/sword_refers_to_offer/48_add/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/49_strtoint/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/04/sword_refers_to_offer/51_multiply/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/23/sword_refers_to_offer/55_entrynodeofloop/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/sword_refers_to_offer/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
     <loc>http://blog.wenguang0816.top/2019/05/11/dsa/create_and_traveral_bitree/</loc>
     <lastmod>2019-11-25</lastmod>
   </url>  <url>
@@ -197,6 +107,96 @@
     <lastmod>2019-11-25</lastmod>
   </url>  <url>
     <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/942_di_string_match/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/944_delete_columns_to_make_sorted/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/24/leetcode/961_n_repeated_element_in_size_2n_array/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/08/04/share/numpy/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/01/share/git_tag/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/03/05/share/huaweicloud_git/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/11/25/share/modify_ubuntu_username/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/02/28/share/qt_serial_communication/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/01_lookup_in_a_two_dimensional_array/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/03_print_linkedlist_from_tail_to_head/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/18/sword_refers_to_offer/05_queue_with_two_stacks/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/07_fibonacci_series/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/08_jumpfloor/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/09_jumpfloorii/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/04/sword_refers_to_offer/10_rectcover/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/01/sword_refers_to_offer/11_number_of_1_bits/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/12_power/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/23/sword_refers_to_offer/14_findkthtotail/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/15_reverse_linkedlist/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/17/sword_refers_to_offer/18_mirror/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/08/11/sword_refers_to_offer/20_min/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/07/25/sword_refers_to_offer/30_findgreatestsumofsubarray/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/17/sword_refers_to_offer/38_treedepth/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/07/27/sword_refers_to_offer/39_isbalanced/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/43_leftrotatestring/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/02/sword_refers_to_offer/47_sum/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/07/22/sword_refers_to_offer/48_add/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/21/sword_refers_to_offer/49_strtoint/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/04/sword_refers_to_offer/51_multiply/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/23/sword_refers_to_offer/55_entrynodeofloop/</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>http://blog.wenguang0816.top/2019/04/03/sword_refers_to_offer/sword_refers_to_offer/</loc>
     <lastmod>2019-11-25</lastmod>
   </url>
 </urlset>
