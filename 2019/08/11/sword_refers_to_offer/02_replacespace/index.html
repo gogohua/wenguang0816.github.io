@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="二进制中1的个数, 云中的Jason">
-    <meta name="description" content="11. 二进制中1的个数题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
-解题思路：
-思路1：直接去掉二进制中位置最靠后的1。假设n=1100，则n-1=1011，那么n&amp;amp;(n-1)=1000,位置最靠后的1">
+    <meta name="keywords" content="替换空格, 云中的Jason">
+    <meta name="description" content="2. 替换空格题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+解题思路：首先统计字符串中的空格数量numberOfBla">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="baidu-site-verification" content="IFH5rudT4P">
     <meta name="google-site-verification" content="VUFL73EWMzmpuGK9EUgVofeIBATc0gshz-vL0O7pLG8">
     <meta name="msvalidate.01" content="DF7237A289049791E605C7650473FA5F">
-    <title>二进制中1的个数 | 云中的Jason</title>
+    <title>替换空格 | 云中的Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/20190401-4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wenguang0816/blogPic/raw/master/20200201-1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        二进制中1的个数
+                        替换空格
                     </div>
                 </div>
             </div>
@@ -386,12 +385,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/位运算/" target="_blank">
-                                <span class="chip bg-color">位运算</span>
-                            </a>
-                        
-                            <a href="/tags/数学/" target="_blank">
-                                <span class="chip bg-color">数学</span>
+                            <a href="/tags/字符串/" target="_blank">
+                                <span class="chip bg-color">字符串</span>
                             </a>
                         
                     </div>
@@ -414,14 +409,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-01
+                    2019-08-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        209
+                        206
                     </div>
                     
 
@@ -444,39 +439,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="11-二进制中1的个数"><a href="#11-二进制中1的个数" class="headerlink" title="11. 二进制中1的个数"></a><a href="https://www.nowcoder.com/practice/8ee967e43c2c4ec193b040ea7fbb10b8?tpId=13&tqId=11164&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">11. 二进制中1的个数</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
-<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><ul>
-<li>思路1：直接去掉二进制中位置最靠后的1。假设<code>n=1100</code>，则<code>n-1=1011</code>，那么<code>n&amp;(n-1)=1000</code>,位置最靠后的1被去掉。 时间复杂度O(M), M为1的个数</li>
-<li>思路2：利用标志位遍历int的32位; 时间复杂度O(1), 32次循环</li>
-</ul>
-<p><strong>注：负数右移后，最高位补1，如果右移判断最低位将导致死循环</strong> </p>
-<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 方法1</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+                <h3 id="2-替换空格"><a href="#2-替换空格" class="headerlink" title="2. 替换空格"></a><a href="https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">2. 替换空格</a></h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>首先统计字符串中的空格数量<code>numberOfBlank</code>，那么将字符串中的空格替换为<code>%20</code>后，字符串的长度应该为<code>indexNew = length + 2 * numberOfBlank - 1</code>，这样从后向前将原有字符串的字符依次向后移动，遇到空格则替换为<code>%20</code>。</p>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">NumberOf1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">replaceSpace</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">,</span><span class="token keyword">int</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>str <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 统计空格数量</span>
+        <span class="token keyword">int</span> numberOfBlank <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            n <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span>
+                <span class="token operator">++</span>numberOfBlank<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> indexOriginal <span class="token operator">=</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> indexNew <span class="token operator">=</span> length <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> numberOfBlank <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> indexOriginal<span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                str<span class="token punctuation">[</span>indexNew<span class="token punctuation">]</span> <span class="token operator">=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token operator">--</span>indexNew<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                str<span class="token punctuation">[</span>indexNew<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+                str<span class="token punctuation">[</span>indexNew<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'2'</span><span class="token punctuation">;</span>
+                str<span class="token punctuation">[</span>indexNew<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'%'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 方法2:</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-     <span class="token keyword">int</span>  <span class="token function">NumberOf1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-         <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-         <span class="token keyword">while</span><span class="token punctuation">(</span>flag <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-         <span class="token punctuation">{</span>
-             <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">&amp;</span> flag<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                 <span class="token operator">++</span>cnt<span class="token punctuation">;</span>
-             flag <span class="token operator">=</span> flag <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
-         <span class="token punctuation">}</span>
-         <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
@@ -636,9 +629,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《二进制中1的个数》
+                    《替换空格》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/04/01/sword_refers_to_offer/11_number_of_1_bits/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/sword_refers_to_offer/02_replacespace/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Jason
             </a> 采用
@@ -679,7 +672,7 @@
         repo: 'wenguang0816.github.io',
         owner: 'wenguang0816',
         admin: ["wenguang0816"],
-        id: '2019-04-01T16-50-00',
+        id: '2019-08-11T18-20-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -704,23 +697,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/01/sword_refers_to_offer/07_fibonacci_series/">
+                <a href="/2019/08/11/sword_refers_to_offer/20_min/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190401-3.jpg" class="responsive-img" alt="斐波那契数列">
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20191017-1.jpg" class="responsive-img" alt="包含min函数的栈">
                         
-                        <span class="card-title">斐波那契数列</span>
+                        <span class="card-title">包含min函数的栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指 offer：7、斐波那契数列
+                            剑指 offer：20、包含min函数的栈
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-11
                         </span>
                         <span class="publish-author">
                             
@@ -737,12 +730,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/循环/" target="_blank">
-                        <span class="chip bg-color">循环</span>
-                    </a>
-                    
-                    <a href="/tags/斐波那契/" target="_blank">
-                        <span class="chip bg-color">斐波那契</span>
+                    <a href="/tags/栈/" target="_blank">
+                        <span class="chip bg-color">栈</span>
                     </a>
                     
                 </div>
@@ -756,30 +745,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/01/sword_refers_to_offer/01_lookup_in_a_two_dimensional_array/">
+                <a href="/2019/08/04/share/numpy/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190401-2.jpg" class="responsive-img" alt="二维数组中的查找">
+                        <img src="https://gitee.com/wenguang0816/blogPic/raw/master/20190804-1.jpg" class="responsive-img" alt="Numpy基础">
                         
-                        <span class="card-title">二维数组中的查找</span>
+                        <span class="card-title">Numpy基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指 offer：1、二维数组中的查找
+                            Numpy基础
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/剑指-offer/" class="post-category" target="_blank">
-                                    剑指 offer
+                            <a href="/categories/分享/" class="post-category" target="_blank">
+                                    分享
                                 </a>
                             
                             
@@ -789,12 +778,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
-                    </a>
-                    
-                    <a href="/tags/查找/" target="_blank">
-                        <span class="chip bg-color">查找</span>
+                    <a href="/tags/Numpy/" target="_blank">
+                        <span class="chip bg-color">Numpy</span>
                     </a>
                     
                 </div>

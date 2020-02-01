@@ -461,13 +461,13 @@ struct ListNode {
     int val;
     struct ListNode *next;
     ListNode(int x) :
-            val(x), next(NULL) {
+            val(x), next(nullptr) {
     }
 };*/</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">FindKthToTail</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pListHead<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>pListHead <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pListHead <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
             <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> pAhead <span class="token operator">=</span> pListHead<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> pBehind <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
@@ -920,7 +920,7 @@ struct ListNode {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">23k</span>
+                <span class="white-color">23.2k</span>
             
 
             

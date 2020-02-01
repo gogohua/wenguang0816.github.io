@@ -449,25 +449,25 @@ struct ListNode {
     int val;
     struct ListNode *next;
     ListNode(int x) :
-            val(x), next(NULL) {
+            val(x), next(nullptr) {
     }
 };*/</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">ReverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>pHead <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pHead <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
             <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>
         ListNode <span class="token operator">*</span>p1 <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
         ListNode <span class="token operator">*</span>p2 <span class="token operator">=</span> pHead<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-        ListNode <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        ListNode <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             p3 <span class="token operator">=</span> p2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
             p2<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
             p1 <span class="token operator">=</span> p2<span class="token punctuation">;</span>
             p2 <span class="token operator">=</span> p3<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        pHead<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
         pHead <span class="token operator">=</span> p1<span class="token punctuation">;</span>
         <span class="token keyword">return</span> pHead<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -909,7 +909,7 @@ struct ListNode {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">23k</span>
+                <span class="white-color">23.2k</span>
             
 
             

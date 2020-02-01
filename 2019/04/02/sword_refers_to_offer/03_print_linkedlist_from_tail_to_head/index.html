@@ -459,7 +459,7 @@
  *        int val;
  *        struct ListNode *next;
  *        ListNode(int x) :
- *              val(x), next(NULL) {
+ *              val(x), next(nullptr) {
  *        }
  *  };
  */</span>
@@ -471,7 +471,7 @@
         vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
         stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nodes<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> pNode <span class="token operator">=</span> head<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             nodes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>pNode<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
             pNode <span class="token operator">=</span> pNode<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
@@ -490,7 +490,7 @@
     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">printListFromTailToHead</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> pNode <span class="token operator">=</span> head<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>pNode <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             ans<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>ans<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pNode<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
             pNode <span class="token operator">=</span> pNode<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
@@ -931,7 +931,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">23k</span>
+                <span class="white-color">23.2k</span>
             
 
             
