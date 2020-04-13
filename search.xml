@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决tinyMediaManager无法刮削的问题</title>
+      <link href="/2020/04/13/share/tinymediamanager_timeout/"/>
+      <url>/2020/04/13/share/tinymediamanager_timeout/</url>
+      
+        <content type="html"><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在看了阿文菌的帖子<a href="https://post.smzdm.com/p/a4wkqw37/" target="_blank" rel="noopener">手把手教您用tMM刮削影片信息，让KODI、Jellyfin、PLEX、使用本地媒体电影墙！</a>后开始使用tinyMediaManager代替emby原始的刮削工具，但是在换了电脑之后发现tinyMediaManager无法使用了。</p><blockquote><p>报错信息：java.net.SocketTimeoutException:connect timed out</p></blockquote><p><img src="https://gitee.com/wenguang0816/blogPic/raw/master/20200413-2.jpg" alt></p><p>起初以为是java环境的问题，重装了几次无果，后来才知道是该工具的域名被ban了，需要科学上网。</p><p>其实不需要科学上网，也可以解决网络问题，需要我们人为去修改客户端的<code>hosts</code>文件，将tMM所使用的域名映射到没有被ban的IP地址上。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="windows上修改hosts文件"><a href="#windows上修改hosts文件" class="headerlink" title="windows上修改hosts文件"></a>windows上修改<code>hosts</code>文件</h2><ol><li>打开<code>C:\WINDOWS\system32\drivers\etc</code>路径</li><li>找到<code>hosts</code>文件并复制到桌面上</li><li>用记事本打开<code>hosts</code>文件，在最后一行添加以下内容后保存<br>```bash</li><li>224.161.90   api.themoviedb.org<br>```</li><li>将<code>hosts</code>复制到<code>C:\WINDOWS\system32\drivers\etc</code>路径并覆盖</li></ol><h2 id="mac上修改hosts文件的方法"><a href="#mac上修改hosts文件的方法" class="headerlink" title="mac上修改hosts文件的方法"></a>mac上修改<code>hosts</code>文件的方法</h2><ol><li>打开终端，切换到<code>root</code>账户<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> -i<span class="token comment" spellcheck="true"># 会提示输入密码，输入即可</span></code></pre></li><li>修改<code>hosts</code>文件<pre class=" language-bash"><code class="language-bash">vim /etc/hosts</code></pre></li><li>按下<code>i</code>键进入编辑模式，在最后一行添加以下内容<br>```bash</li><li>224.161.90   api.themoviedb.org<br>```</li><li>按下<code>Esc</code>退出编辑模式，并输入<code>:wq</code>保存退出</li></ol><p>现在，就可以正常使用tMM进行刮削了</p><h4 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h4><p><a href="http://www.gebi1.com/thread-295644-1-1.html" target="_blank" rel="noopener">群晖Docker里安装TinyMediaManager并开启中文支持(完美解决)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 群呼 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>群晖Docker加速</title>
       <link href="/2020/03/30/share/synology_docker_accelerate/"/>
       <url>/2020/03/30/share/synology_docker_accelerate/</url>
